@@ -1,0 +1,59 @@
+{
+  "Name": "BlueCoinSystem",
+  "Author": "Evanbowl and Lord-Giganticus",
+  "Description": "Full Blue Coin System [63]",
+  "CompilerFlags" : [
+    "-DBLUECOINSYSTEM",
+    "-DBLUECOINBOARD" 
+  ],
+  "InstallDependancies": ["Syati_ObjectFactories", "Syati_Init", "PTUtils", "CoinBase"],
+  "ModuleDependancies": ["PTUtils", "CoinBase_API"],
+  "ModuleData" : [
+    {
+      "NameObjFactory": [
+        {
+          "Name" : "BlueCoin",
+          "Function" : "BlueCoinUtil::createBlueCoin",
+          "Include" : "BlueCoinUtil.h"
+        },
+        {
+          "Name" : "BlueCoinSign",
+          "Function" : "BlueCoinSignUtil::createBlueCoinSign",
+          "Include" : "BlueCoinBoard.h"
+        }
+      ],
+      "StationedFileEntry" : [
+        {
+          "Type1" : "1",
+          "Type2" : "6",
+          "Path" : "/ObjectData/BlueCoin.arc"
+        },
+        {
+          "Type1" : "1",
+          "Type2" : "6",
+          "Path" : "/ObjectData/BlueCoinClear.arc"
+        },
+        {
+          "Type1" : "1",
+          "Type2" : "7",
+          "Path" : "/LayoutData/BlueCoinCounterInStage.arc"
+        }
+      ],
+      "CoinBaseSpawning": [
+        {
+          "ID" : "1",
+          "CoinCreateFunc" : "BlueCoinUtil::tryCreateBlueCoinForSpawningActorActionKeeper",
+          "CoinAppearFunc" : "BlueCoinUtil::tryAppearBlueCoinActionKeeper",
+          "Include" : "BlueCoinUtil.h"
+        }
+      ],
+      "GLE__IsGalaxyAllComplete": [
+        {
+          "Name": "BlueCoinAllCheck",
+          "Function" : "BlueCoinUtil::checkStageBlueCoinCompletion",
+          "Include": "BlueCoinUtil.h"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "Version": 1,
+  "Files": [
+    "include/ActorUtil.h",
+    "include/GeneralUtil.h",
+    "include/MathUtil.h",
+    "include/PlayerUtil.h",
+    "include/TalkUtil.h",
+    "source/ActorUtil.cpp",
+    "source/GeneralUtil.cpp",
+    "source/MathUtil.cpp",
+    "source/PlayerUtil.cpp",
+    "source/TalkUtil.cpp"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "Name": "Super Mario Galaxy 63",
+  "Author": "Galactic Insanity Team",
+  "Description": "Custom Code specific to Super Mario Galaxy 63.",
+
+  "CompilerFlags": [
+    "-DSMG63"
+  ]
+}

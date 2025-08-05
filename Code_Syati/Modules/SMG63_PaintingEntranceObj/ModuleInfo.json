@@ -1,0 +1,16 @@
+{
+    "Name": "TODO",
+    "Author": "Super Hackio",
+    "Description": "TODO",
+    "ModuleData" : [
+      {
+        "ProductMapObj": [
+          {
+            "Name": "PaintingEntranceObj",
+            "Function": "createExtActor<PaintingEntranceObj>",
+            "Include": "PaintingEntranceObj.h"
+          }
+        ]
+      }
+    ]
+  }

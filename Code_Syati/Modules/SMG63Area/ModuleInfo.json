@@ -1,0 +1,25 @@
+{
+  "Name": "SMG63 Area",
+  "Author": "Evanbowl",
+  "Description": "An area for SMG63 that serves miscellaneous minor purposes.",
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "SMG63Area",
+          "Function" : "createExtActor<SMG63Area>",
+          "Include" : "SMG63Area.h"
+        }
+      ]
+    },
+    {
+      "AreaObjMgr" : [
+        {
+          "Name" : "SMG63Area",
+          "MaxCount" : "16",
+          "Function" : "AreaObjContainer::createManager<AreaObjMgr>"
+        }
+      ]
+    }
+  ]
+}

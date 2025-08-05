@@ -1,0 +1,20 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/LayoutData/RedCoinCounter.arc",
+    "disc/LayoutData/RedCoinCounterPlayer.arc",
+    "disc/ObjectData/RedCoin.arc",
+    "disc/ObjectData/RedCoinSwitch.arc",
+    "include/Game/LiveActor/ExtActorActionKeeper.h",
+    "include/RedCoin.h",
+    "include/RedCoinController.h",
+    "include/RedCoinLayouts.h",
+    "include/RedCoinSwitch.h",
+    "include/RedCoinUtil.h",
+    "source/RedCoin.cpp",
+    "source/RedCoinController.cpp",
+    "source/RedCoinLayouts.cpp",
+    "source/RedCoinSwitch.cpp",
+    "source/RedCoinUtil.cpp"
+  ]
+}

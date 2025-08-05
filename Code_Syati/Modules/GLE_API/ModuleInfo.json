@@ -1,0 +1,39 @@
+{
+  "Name": "Galaxy Level Engine",
+  "Author": "Super Hackio",
+  "Description": "Syati Bindings for Galaxy Level Engine functions.",
+  "APIId": "GalaxyLevelEngine_API",
+  "CompilerFlags": [
+    "-DGALAXY_LEVEL_ENGINE"
+  ],
+
+  "GLEBuildTool": [
+    "Generated: August 2, 2025 11:59:49 AM",
+    "Symbol Count: 11",
+    "Hook Count: 1",
+    "GLE Version: V3.5.0.0"
+  ],
+  "ModuleExtensionDefinition": [
+    {
+      "Name": "GLE__IsGalaxyAllComplete",
+      "CodeGenSource": "GEN_GalaxyLevelEngine_Hooks.h",
+      "CodeGenDestination": "codebuild/ModuleData_GalaxyLevelEngine_Hooks.h",
+      "Variables": [
+        "Name",
+        "Function",
+        "Include"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "GLE__IsGalaxyAllCompleteList",
+          "ReplaceFormatData": "{1}, //{0}"
+        },
+        {
+          "ReplaceTargetName": "IncludeListGLE__IsGalaxyAllComplete",
+          "ReplaceFormatData": "#include \"{2}\""
+        }
+      ]
+    }
+  ]
+
+}

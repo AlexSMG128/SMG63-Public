@@ -1,0 +1,34 @@
+{
+  "Name": "CoinBase",
+  "Author": "Evanbowl",
+  "Description": "Base Class for Custom Coins\nCustom Coin Spawns\n\nCurrently Supported (Blue Coin)\nKuribo (Obj_arg2)\nSamboHead (Obj_arg1)\nTeresa (Obj_arg6 and Obj_arg7)\n\nCurrently Supported (Red Coin)\nKuribo (Obj_arg3)\nSamboHead (Obj_arg2)\nTeresa (Obj_arg7)",
+  "APIId": "CoinBase_API",
+    "ModuleExtensionDefinition" : [
+    {
+      "Name" : "CoinBaseSpawning",
+      "CodeGenSource": "GEN_Spawns.h",
+      "CodeGenDestination": "codebuild/ModuleData_Spawns.h",
+      "Variables": [
+        "ID",
+        "CoinCreateFunc",
+        "CoinAppearFunc",
+        "Include"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "CoinCreateEntry",
+          "ReplaceFormatData": "    {{{1}, {0}}},"
+        },
+        {
+          "ReplaceTargetName": "CoinAppearEntry",
+          "ReplaceFormatData": "    {{{2}, {0}}},"
+        },
+        {
+          "ReplaceTargetName": "Includes",
+          "ReplaceFormatData": "#include \"{3}\""
+        }
+      ]
+    }
+  ]
+}
+ 

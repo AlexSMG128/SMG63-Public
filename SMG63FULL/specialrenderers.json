@@ -1,0 +1,276 @@
+{
+  "SpecialRenderers": [
+    {
+      "ObjectName": "Poihana",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BTP": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg2"
+          }
+        }
+      ]
+    },
+    {
+      "ObjectName": "ColorPlatform",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BRK": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg0"
+          },
+          "BTK": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          },
+          "BTP": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          }
+        }
+      ]
+    },
+    {
+      "ObjectName": "ColorPlatformBounceSmall",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BRK": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg0"
+          },
+          "BTK": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          },
+          "BTP": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          }
+        }
+      ]
+    },
+    {
+      "ObjectName": "ColorPlatformBounceMedium",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BRK": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg0"
+          },
+          "BTK": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          },
+          "BTP": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          }
+        }
+      ]
+    },
+    {
+      "ObjectName": "ColorPlatformBounceLarge",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BRK": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg0"
+          },
+          "BTK": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          },
+          "BTP": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          }
+        }
+      ]
+    },
+    {
+      "ObjectName": "CastlePainting",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BRK": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg0"
+          },
+          "BTK": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          },
+          "BTP": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          }
+        }
+      ]
+    },
+    {
+      "ObjectName": "BooPlatformA",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BRK": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg0"
+          },
+          "BTK": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          },
+          "BTP": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          }
+        }
+      ]
+    },
+    {
+      "ObjectName": "BookMoveStep",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BRK": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg0"
+          },
+          "BTK": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          },
+          "BTP": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          }
+        }
+      ]
+    },
+    {
+      "ObjectName": "BookRotateStep",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BRK": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg0"
+          },
+          "BTK": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          },
+          "BTP": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          }
+        }
+      ]
+    },
+    {
+      "ObjectName": "MansionPaintingA",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BRK": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg0"
+          },
+          "BTK": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          },
+          "BTP": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          }
+        }
+      ]
+    },
+    {
+      "ObjectName": "MansionPaintingB",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BRK": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg0"
+          },
+          "BTK": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          },
+          "BTP": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          }
+        }
+      ]
+    },
+    {
+      "ObjectName": "DiscoLightOrb",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BRK": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg0"
+          },
+          "BTK": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          },
+          "BTP": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          }
+        }
+      ]
+    },
+    {
+      "ObjectName": "CosmicStationCircleStep",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BRK": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg0"
+          },
+          "BTK": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          },
+          "BTP": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          }
+        }
+      ]
+    },
+    {
+      "ObjectName": "FinalKingBlockStep",
+      "RendererType": "BasicAnim",
+      "RendererParams": [
+        {
+          "BRK": {
+            "Filename": "ColorChange",
+            "FrameSource": "Obj_arg0"
+          },
+          "BTK": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          },
+          "BTP": {
+            "Filename": "TexChange",
+            "FrameSource": "Obj_arg1"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+riivolution/config/
+SMG63FULL/SaveGame/
+*.lnk
+*.o
+
+# Visual Studio 2015 cache/options directory
+Code_Syati/.vs/
