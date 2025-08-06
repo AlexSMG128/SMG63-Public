@@ -2,8 +2,10 @@ MOD DIRECTOR:
 Alex SMG
 
 MODELERS:
-Alex SMG, Kairos
-Floaty, Shadow64
+Alex SMG
+Kairos
+Floaty
+Shadow64
 
 ANIMATOR:
 Syreyup
@@ -39,9 +41,12 @@ MARIO CONST EDITOR:
 Super Hackio
 
 MATERIALS:
-Alex SMG, Luma48
-Super Hackio, SY24
-Kairos, Floaty
+Alex SMG
+Luma48
+Super Hackio
+SY24
+Kairos
+Floaty
 The Eclipse Team
 
 
@@ -49,8 +54,10 @@ HD SM64 TEXTURES:
 GhostlyDark
 
 SOUND IMPORTS:
-Alex SMG, Xandog
-Syreyup, SY24
+Alex SMG
+Xandog
+Syreyup
+SY24
 
 
 BEST PROGRAM EVER MADE:
@@ -71,9 +78,6 @@ Mario 64 Menu Screen Remix - HouseMasta
 Mario's pwnd Slide - m477zorz
 The Alternate Route - ParagonX9
 Rainbow Star & Yoshi Drum Inserts - Luminator
-
-
-MUSIC:
 Yoshi's Island Athletic - Super O'Brothers
 Cool Cool Mountain Remix - Diego Leal E.
 Hazy Maze Cave Remix - SuperStarGuy
@@ -107,25 +111,33 @@ FortTheo
 
 
 HONORABLE MENTIONS:
-PhantomBane, HackedCrusade
-baconsizzles, nintensive
-Gabbo, UncleMeat
-L-Dev, Solargress
-BlueXD, JuPaHe64
-John275, TayCamGame
+PhantomBane
+HackedCrusade
+baconsizzles
+nintensive
+Gabbo
+UncleMeat
+L-Dev
+Solargress
+BlueXD
+JuPaHe64
+John275
+TayCamGame
 
 
 ASSETS STOLE-I..I MEAN BORROWED FROM:
-Super Mario Sunshine|Super Mario 3D Land
-Super Mario Odyssey|Super Mario 3D World
-Sonic Unleashed|Mario Kart Double Dash
+Super Mario Sunshine
+Super Mario 3D Land
+Super Mario Odyssey
+Super Mario 3D World
+Sonic Unleashed
+Mario Kart Double Dash
 The Legend Of Zelda Breath of the Wild
 
 
 SPECIAL THANKS:
-To the E3 2009 SMG2 trailer
-for getting me into to galaxy modding
-Alex SMG
+To the E3 2009 SMG2 trailer for getting me into to galaxy modding
+-Alex SMG
 
 
 THANKS FOR INCLUDING THIS MOD IN F3 2022:
@@ -133,10 +145,14 @@ Kaze Emanuar
 
 
 MODS THAT INSPIRED SMG63'S CREATION
-Super Mario Galaxy Run, Super Mayro Galaxy
-Super Mario Galaxy 64, Super Mario Gravity
-Super Mario Star Road, SMG2 More
-Super Mario Starshine, Lunar Mario Galaxy
+Super Mario Galaxy Run
+Super Mayro Galaxy
+Super Mario Galaxy 64
+Super Mario Gravity
+Super Mario Star Road
+SMG2 More
+Super Mario Starshine
+Lunar Mario Galaxy
 
 
 SHINE SPRITE MOD:
@@ -149,11 +165,16 @@ Super Hackio
 
 
 TOOLS USED:
-SuperBMD, Collision Creator 0.7
-Arc Convertor, Galaxy MSBT
-Launch Cam Plus, Scenaristar
-Riistudio, J3DView
-BrawlBox, Switch Toolbox
+SuperBMD
+Collision Creator 0.7
+Arc Convertor
+Galaxy MSBT
+Launch Cam Plus
+Scenaristar
+Riistudio
+J3DView
+BrawlBox
+Switch Toolbox
 J3D Animation Editor
 
 
