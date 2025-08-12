@@ -1,0 +1,14 @@
+{
+  "Name": "PauseMenuNewButton",
+  "Author": "Evanbowl",
+  "Description": "Restart Stage Button",
+  "CompilerFlags" : [
+    "-DPAUSEMENUNEWBUTTON"
+  ],
+  "InstallDependencies": ["Syati_Init"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }]
+}

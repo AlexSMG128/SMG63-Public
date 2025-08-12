@@ -98,6 +98,9 @@ void CoinBase::makeActorAppeared() {
 }
 
 bool CoinBase::receiveOtherMsg(u32 msg, HitSensor* pSender, HitSensor* pReceiver) {
+    if (MR::isDead(this))
+        return false;
+
     if (MR::isMsgItemGet(msg))
         vRequestGetCoin();
 

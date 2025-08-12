@@ -86,7 +86,7 @@ namespace BlueCoinUtil {
 
                 if (code != BINSIZE) {
                     char errstr[180];
-                    snprintf(errstr, 180, "Blue Coin Write Error\nExpected size of %d\nNANDRead code: %d\n", BINSIZE, code);
+                    snprintf(errstr, 180, "Blue Coin Write Error\nExpected size of %d\nNANDWrite code: %d\n", BINSIZE, code);
 		            GXColor bg = { 0, 0, 0, 0 };
                     GXColor fg = { 255, 255, 255, 255 };
                     OSFatal(fg, bg, errstr);

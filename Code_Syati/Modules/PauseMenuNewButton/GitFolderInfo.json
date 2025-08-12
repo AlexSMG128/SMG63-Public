@@ -1,0 +1,8 @@
+{
+  "Version": 3,
+  "Files": [
+    "disc/LayoutData/PauseMenu.arc",
+    "include/Game/Screen/PauseMenuExt.h",
+    "source/PauseMenuNewButton.cpp"
+  ]
+}

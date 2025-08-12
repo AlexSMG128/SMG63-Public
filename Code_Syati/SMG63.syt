@@ -59,11 +59,11 @@
     "CoinBase",
     "RedCoinSystem",
     "ChildSwitchArea",
-    "PauseMenuNewButton",
     "LavaSteam",
     "WaterRiseSwitch",
     "SMG2_SimpleNPC",
-    "GLE_API"
+    "GLE_API",
+    "PauseMenuNewButton"
   ],
   "ModulesPath": "Modules\\",
   "OutputPath": "..\\SMG63FULL\\CustomCode\\",

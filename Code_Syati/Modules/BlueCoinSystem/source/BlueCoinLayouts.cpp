@@ -67,7 +67,6 @@ kmWrite32(0x80486EAC, 0x7C651B78); // mr r5, r3
 s32 setUpBlueCoinInfoOnAppear(PauseMenuExt* pPauseMenu) {
     setPauseMenuBlueCoinStageCount(pPauseMenu);
     MR::startPaneAnimAndSetFrameAndStop(pPauseMenu, "ListButton", "ChangeList", 0.0f, 1);
-    MR::setTextBoxGameMessageRecursive(pPauseMenu, "StarList", "PauseMenu_StarList");
     pPauseMenu->mDisplayMode = 0;  
     
     if (pPauseMenu->mIsExistBlueCoins) {
@@ -144,7 +143,7 @@ void PauseMenuIDListControls(PauseMenuExt* pPauseMenu) {
     bool stagecheck = MR::isStageNoPauseMenuStars() || MR::isStageStoryBook() || MR::isStageMarioFaceShipOrWorldMap();
     wchar_t gStarIconIDList[2];
 
-    if (MR::testCorePadTriggerB(0)) {
+    if (MR::testCorePadTriggerB(0) && !stagecheck) {
         if (pPauseMenu->mDisplayMode == 0)
             pPauseMenu->mDisplayMode = 1;
         else
@@ -155,11 +154,9 @@ void PauseMenuIDListControls(PauseMenuExt* pPauseMenu) {
         if (pPauseMenu->mDisplayMode == 1)
             pLabel = "PauseMenu_BlueCoinList";
 
-        MR::setTextBoxGameMessageRecursive(pPauseMenu, "StarList", pLabel);
         f32 frame = (f32)pPauseMenu->mDisplayMode;
-        MR::startPaneAnimAndSetFrameAndStop(pPauseMenu, "ListButton", "ChangeList", frame, 1);
         
-        if (pPauseMenu->mIsExistBlueCoins && !stagecheck) {
+        if (pPauseMenu->mIsExistBlueCoins) {
             MR::startPaneAnimAndSetFrameAndStop(pPauseMenu, "StageInfo", "Change", frame, 1);
             MR::addPictureFontCode(gStarIconIDList, pPauseMenu->mDisplayMode > 0 ? 0xC2 : 0xC1);
             MR::setTextBoxFormatRecursive(pPauseMenu, "TxtCoinPage", gStarIconIDList);
@@ -179,7 +176,6 @@ kmWrite32(0x8048742C+REGIONOFF, 0x4182007C);
 
 #ifndef PAUSEMENUNEWBUTTON
 PauseMenuExt* createPauseMenuExt() {
-    OSReport("Pause Menu Created\n");
     return new PauseMenuExt();
 }
 
@@ -220,7 +216,7 @@ kmCall(0x804874D4+REGIONOFF, PauseMenuMoveButtonForBlueCoin); // bl PauseMenuMov
 #endif
 
 void setPauseMenuNerve(PauseMenuExt* pPauseMenu, const Nerve* pNerve) {
-    if (pPauseMenu->mDisplayMode == 1)
+    if (pPauseMenu->mIsUsedBlueCoinButton)
         pNerve = &NrvPauseMenuExt::NrvPauseMenuExtBlueCoinList::sInstance;
 
     pPauseMenu->setNerve(pNerve);
@@ -231,9 +227,11 @@ kmCall(0x80487BD0, setPauseMenuNerve);
 void PauseMenuExt::exeBlueCoinList() {
     if (MR::isFirstStep(this))
         mBlueCoinList->appear();
-
-    if (MR::isDead(mBlueCoinList))
+    
+    if (MR::isDead(mBlueCoinList)) {
+        mIsUsedBlueCoinButton = false;
         __kAutoMap_80487540(this);
+    }
 }
 
 

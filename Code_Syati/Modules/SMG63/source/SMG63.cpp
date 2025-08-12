@@ -16,7 +16,7 @@ kmWrite32(0x80301C64, 0x7FA3EB78);
 kmCall(0x80301C6C, SnowBallDieInWater);
 
 
-
+kmWrite32(0x803CB1F0, 0x60000000);
 
 const char* KoopaFight1LoadResources() {
 	return "BowserLV1Galaxy";

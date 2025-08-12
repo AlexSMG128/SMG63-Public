@@ -20,7 +20,7 @@
 		<folder external="LocalizeData/English" disc="/LocalizeData/EuDutch" create="true" />
 		<folder external="LocalizeData/English" disc="/LocalizeData/EuEnglish" create="true" />
 		<folder external="LocalizeData/French" disc="/LocalizeData/EuFrench" create="true" />
-		<folder external="LocalizeData/German" disc="/LocalizeData/EuGerman" create="true" />
+		<folder external="LocalizeData/English" disc="/LocalizeData/EuGerman" create="true" />
 		<folder external="LocalizeData/English" disc="/LocalizeData/EuItalian" create="true" />
 		<folder external="LocalizeData/English" disc="/LocalizeData/EuSpanish" create="true" />
 		<folder external="ObjectData" disc="/ObjectData" create="true"/>

@@ -20,6 +20,7 @@ public:
     void populateListEntries();
     void updateTextBoxes();
     void updateBlueCoinTextPane();
+    void determineArrowVisibilty();
 
     enum GalaxyState {
         STATE_GALAXY_LOCKED,
@@ -56,6 +57,8 @@ public:
     s32 mMaxPages;
     s32 mDefaultCursorPosition;
     s32 mDefaultPage;
+    bool mIsLeftHidden;
+    bool mIsRightHidden;
 };
 
 namespace NrvBlueCoinList {

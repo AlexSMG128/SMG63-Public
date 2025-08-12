@@ -65,7 +65,6 @@ void BlueCoin::control() {
 }
 
 void BlueCoin::onSwitchAppear() {
-    OSReport("Yes\n");
     MR::validateHitSensors(this);
 }
 
@@ -82,9 +81,10 @@ bool BlueCoin::vRequestGetCoin() {
     setNerve(&NrvCoin::CoinNrvGot::sInstance);
     makeActorDead();
     
+    BlueCoinUtil::updateStageProgress(mID);
+    
     if (!BlueCoinUtil::isBlueCoinGotCurrentFile(mID)) {
         BlueCoinUtil::setBlueCoinGotCurrentFile(mID);
-        BlueCoinUtil::updateStageProgress(mID);
 
         if (!BlueCoinUtil::hasSeenBlueCoinTextBoxCurrentFile())
             BlueCoinUtil::showTextBox();

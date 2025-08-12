@@ -17,7 +17,7 @@
         
 		<folder external="AudioRes" disc="/AudioRes" create="true"/>
 		<folder external="LayoutData" disc="/LayoutData" create="true"/>
-		<folder external="LocalizeData/Japanese" disc="/LocalizeData/JpJapanese" create="true" />
+		<folder external="LocalizeData/English" disc="/LocalizeData/JpJapanese" create="true" />
 		<folder external="ObjectData" disc="/ObjectData" create="true"/>
 		<folder external="ParticleData" disc="/ParticleData" create="true"/>
 		<folder external="StageData" disc="/StageData" create="true"/>

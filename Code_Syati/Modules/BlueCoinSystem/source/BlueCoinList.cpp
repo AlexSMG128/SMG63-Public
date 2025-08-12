@@ -26,6 +26,8 @@ BlueCoinList::BlueCoinList(const char* pName) : LayoutActor(pName, false) {
     mMaxPages = 1;
     mDefaultCursorPosition = 1;
     mDefaultPage = 1;
+    mIsLeftHidden = 0;
+    mIsRightHidden = 0;
 }
 
 void BlueCoinList::init(const JMapInfoIter& rIter) {
@@ -109,15 +111,7 @@ void BlueCoinList::exeAppear() {
         MR::setTextBoxGameMessageRecursive(this, "ShaTotals", "BlueCoinList_Totals");
 
         
-        if (mCurrentPage == 1)
-            MR::hidePaneRecursive(this, "Left");
-        else 
-            MR::showPaneRecursive(this, "Left");
-
-        if (mCurrentPage == mMaxPages) 
-            MR::hidePaneRecursive(this, "Right");
-        else 
-            MR::showPaneRecursive(this, "Right");
+        determineArrowVisibilty();
 
         wchar_t completeTotalStr[2];
         completeTotalStr[1] = 0;
@@ -170,16 +164,7 @@ void BlueCoinList::exeChange() {
     }
 
     if (MR::isStep(this, 11)) {
-        if (mCurrentPage == 1)
-            MR::hidePaneRecursive(this, "Left");
-        else 
-            MR::showPaneRecursive(this, "Left");
-
-        if (mCurrentPage == mMaxPages) 
-            MR::hidePaneRecursive(this, "Right");
-        else 
-            MR::showPaneRecursive(this, "Right");
-
+        determineArrowVisibilty();
         populateListEntries();
         updateTextBoxes();
 
@@ -215,7 +200,7 @@ void BlueCoinList::exeClose() {
     if (MR::isFirstStep(this))
         MR::startAnim(this, "End", 0);
     
-    if (MR::isStep(this, 20))
+    if (MR::isAnimStopped(this, 0))
         kill();
 }
 
@@ -238,20 +223,19 @@ void BlueCoinList::exeWait() {
     mPageDirection = 0;
     s32 cursorDirection = 0;
 
-    bool isLeftValid = !MR::isHiddenPane(this, "Left");
-    bool isRightValid = !MR::isHiddenPane(this, "Right");
 
-    if (isLeftValid && mArrowLeft->isPointingTrigger() || isRightValid && mArrowRight->isPointingTrigger())
+    if (!mIsLeftHidden && mArrowLeft->isPointingTrigger() || !mIsRightHidden && mArrowRight->isPointingTrigger()) {
         MR::startSystemSE("SE_SY_SELECT_PAUSE_ITEM", -1, -1);
+    }
 
-    if (MR::testCorePadTriggerLeft(0) || MR::testSubPadStickTriggerLeft(0) || isLeftValid && mArrowLeft->trySelect()) {
+    if (MR::testCorePadTriggerLeft(0) || MR::testSubPadStickTriggerLeft(0) || !mIsLeftHidden && mArrowLeft->trySelect()) {
         mPageDirection = -1;
 
         if (!mArrowLeft->isDecidedWait())
             __kAutoMap_80461860(mArrowLeft);
     }
 
-    if (MR::testCorePadTriggerRight(0) || MR::testSubPadStickTriggerRight(0) || isRightValid && mArrowRight->trySelect()) {
+    if (MR::testCorePadTriggerRight(0) || MR::testSubPadStickTriggerRight(0) || !mIsRightHidden && mArrowRight->trySelect()) {
         mPageDirection = 1;
 
         if (!mArrowRight->isDecidedWait())
@@ -503,6 +487,30 @@ void BlueCoinList::printListDebugInfo() {
     }
 
     OSReport("------------\n");
+}
+
+void BlueCoinList::determineArrowVisibilty() {
+    if (mCurrentPage == 1) {
+        MR::hidePaneRecursive(this, "Left");
+        mIsLeftHidden = true;
+    }
+    else {
+        if (mIsLeftHidden) {
+            MR::showPaneRecursive(this, "Left");
+            mIsLeftHidden = false;
+        }
+    }
+
+    if (mCurrentPage == mMaxPages) {
+        MR::hidePaneRecursive(this, "Right");
+        mIsRightHidden = true;
+    }
+    else {
+        if (mIsRightHidden) {
+            MR::showPaneRecursive(this, "Right");
+            mIsRightHidden = false;
+        }
+    }
 }
 
 

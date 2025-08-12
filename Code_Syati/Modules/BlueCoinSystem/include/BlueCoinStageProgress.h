@@ -23,11 +23,15 @@ public:
     void disappear();
     void updateTextBox();
     void updateAnimBox();
+    void updateNumBox();
     void setTargetIDAndAppear(s32 id);
+    void calcSlidePaneFrame();
 
     s32 mTargetID;
+    f32 mSlideFrame;
     CounterLayoutAppearer* mAppearer;
     CountUpPaneRumbler* mPaneRumbler;
+    bool mIsTargetIDGot;
 };
 
 namespace NrvBlueCoinStageProgress {
