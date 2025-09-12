@@ -44,6 +44,7 @@ Discord Server! You can find the link here: https://discord.gg/vrFTFtTM7c
 # Building Requirements
 SMG63 uses custom C++ code provided using our modularization standards.<br/>
 Tools: <br/>
+[Syati](https://www.github.com/SMGCommunity/Syati)<br/>
 [SyatiModuleBuildTool](<https://github.com/SMGCommunity/SyatiModuleBuildTool>)<br/> 
 [Kamek](<https://github.com/Treeki/Kamek>)<br/>
 CodeWarrior PPC Compiler 4.3<br/>
