@@ -1,0 +1,7 @@
+{
+  "Version": 1,
+  "Files": [
+    "include/ScrewSwitchBase.h",
+    "source/ScrewSwitchBase.cpp"
+  ]
+}

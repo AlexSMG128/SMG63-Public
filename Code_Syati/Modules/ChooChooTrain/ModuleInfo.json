@@ -1,0 +1,22 @@
+{
+  "Name": "ChooChooTrain",
+  "Author": "Aurum",
+  "Description": "SMG1 Class Port: ChooChooTrain",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init", "PTUtils"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData" : [
+    {
+      "ProductMapObj" : [
+        {
+          "Name" : "ChooChooTrain",
+          "Function" : "createExtActor<pt::ChooChooTrain>",
+          "Include" : "ChooChooTrain.h"
+        }
+      ]
+    }
+  ]
+}

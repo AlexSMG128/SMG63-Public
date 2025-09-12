@@ -1,3 +1,4 @@
+#pragma once
 #include "syati.h"
 
 class BlueCoinCounter : public LayoutActor {
@@ -28,9 +29,9 @@ public:
 };
 
 namespace NrvBlueCoinCounter {
-	NERVE(NrvHide);
-        NERVE(NrvAppear);
-        NERVE(NrvWait);
-        NERVE(NrvDisappear);
-        NERVE(NrvShowTextBox);
+	NERVE_DECL_EXE(NrvHide, BlueCoinCounter, Hide);
+        NERVE_DECL_EXE(NrvAppear, BlueCoinCounter, Appear);
+        NERVE_DECL_EXE(NrvWait, BlueCoinCounter, Wait);
+        NERVE_DECL_EXE(NrvDisappear, BlueCoinCounter, Disappear);
+        NERVE_DECL_EXE(NrvShowTextBox, BlueCoinCounter, ShowTextBox);
 };

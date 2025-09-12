@@ -1,0 +1,8 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/BallBeamer.arc",
+    "include/BallBeamer.h",
+    "source/BallBeamer.cpp"
+  ]
+}

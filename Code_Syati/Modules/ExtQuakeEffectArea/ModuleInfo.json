@@ -1,0 +1,17 @@
+{
+  "Name": "ExtQuakeEffectArea",
+  "Author": "Aurum",
+  "Description": "PT: Restored QuakeEffectArea",
+  "InstallDependencies": ["Syati_ObjectFactories"],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "QuakeEffectArea",
+          "Function" : "pt::createQuakeEffectArea",
+          "Include" : "ExtQuakeEffectArea.h"
+        }
+      ]
+    }
+  ]
+}

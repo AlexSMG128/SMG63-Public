@@ -1,0 +1,7 @@
+{
+  "Version": 1,
+  "Files": [
+    "include/PowerStarAppearPointExt.h",
+    "source/PowerStarAppearPointExt.cpp"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "Name": "MinorPatches",
+  "Author": "Evanbowl",
+  "Description": "Misc: Minor Patches",
+  "InstallDependencies": ["Syati_Init", "PTUtils"]
+}

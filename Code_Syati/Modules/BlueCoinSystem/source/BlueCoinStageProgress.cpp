@@ -31,13 +31,21 @@ void BlueCoinStageProgress::init(const JMapInfoIter& rIter) {
 }
 
 void BlueCoinStageProgress::appear() {
+    LayoutActor::appear();
     if (mAppearer->isAppeared())
         setNerve(&NrvBlueCoinStageProgress::NrvUpdate::sInstance);
     else {
         if (!isNerve(&NrvBlueCoinStageProgress::NrvAppear::sInstance))
             setNerve(&NrvBlueCoinStageProgress::NrvAppear::sInstance);
     }
-    LayoutActor::appear();
+}
+
+void BlueCoinStageProgress::kill() {
+    if (mAppearer->isAppeared())
+        mAppearer->disappear();
+
+    setNerve(&NrvBlueCoinStageProgress::NrvHide::sInstance);
+    LayoutActor::kill();
 }
 
 void BlueCoinStageProgress::control() {
@@ -49,7 +57,8 @@ void BlueCoinStageProgress::exeAppear() {
     if (MR::isFirstStep(this)) {
         mAppearer->reset();
         mPaneRumbler->reset();
-        
+
+        MR::setTextBoxFormatRecursive(this, "ShaNum", L"");
         mAppearer->appear(TVec2f(0.0f, 0.0f));
     }
     
@@ -182,22 +191,6 @@ BlueCoinStageProgress::~BlueCoinStageProgress() {
 }
 
 namespace NrvBlueCoinStageProgress {
-    void NrvAppear::execute(Spine* pSpine) const {
-        ((BlueCoinStageProgress*)pSpine->mExecutor)->exeAppear();
-    }
-
-    void NrvWait::execute(Spine* pSpine) const {
-        ((BlueCoinStageProgress*)pSpine->mExecutor)->exeWait();
-    }
-
-    void NrvUpdate::execute(Spine* pSpine) const {
-        ((BlueCoinStageProgress*)pSpine->mExecutor)->exeUpdate();
-    }
-
-    void NrvDisappear::execute(Spine* pSpine) const {
-        ((BlueCoinStageProgress*)pSpine->mExecutor)->exeDisappear();
-    }
-
     void NrvHide::execute(Spine* pSpine) const {
 
     }

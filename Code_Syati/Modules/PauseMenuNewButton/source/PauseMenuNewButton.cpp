@@ -309,7 +309,6 @@ kmCall(0x80487648+REGIONOFF, setupNewConnection1to2);
 void setupButtonConnection(PauseMenuExt* pPauseMenu) {
     StarPointerUtil::setDefaultAllMovePosition("BoxButton1");
     s32 f = MR::getPaneAnimFrame(pPauseMenu, "ButtonPosition", 0);
-    OSReport("f: %d\n", f);
 
     if (pPauseMenu->mButtonTop && pPauseMenu->mButtonNew) {
         switch ((s32)f) {

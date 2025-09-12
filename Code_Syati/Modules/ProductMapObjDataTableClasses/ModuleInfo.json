@@ -1,0 +1,69 @@
+{
+  "Name": "ProductMapObjDataTableClasses",
+  "Author": "Aurum",
+  "Description": "PT: New ProductMapObjDataTable Classes",
+  "InstallDependencies": ["Syati_ObjectFactories"],
+  "ModuleData" : [
+    {
+      "ProductMapObj" : [
+        {
+          "Name" : "AirFar100m",
+          "Function" : "NameObjFactory::createNameObj<AirFar100m>",
+          "Include" : "ProductMapObjDataTableClasses.h"
+        },
+        {
+          "Name" : "AssemblyBlock",
+          "Function" : "NameObjFactory::createNameObj<AssemblyBlock>"
+        },
+        {
+          "Name" : "BallOpener",
+          "Function" : "NameObjFactory::createNameObj<BallOpener>"
+        },
+        {
+          "Name" : "BeeJumpBall",
+          "Function" : "NameObjFactory::createNameObj<BeeJumpBall>"
+        },
+        {
+          "Name" : "GoroRockLaneParts",
+          "Function" : "NameObjFactory::createNameObj<GoroRockLaneParts>"
+        },
+        {
+          "Name" : "GravityFallBlock",
+          "Function" : "NameObjFactory::createNameObj<GravityFallBlock>"
+        },
+        {
+          "Name" : "InvisiblePolygonObj",
+          "Function" : "NameObjFactory::createNameObj<InvisiblePolygonObj>"
+        },
+        {
+          "Name" : "JumpHole",
+          "Function" : "NameObjFactory::createNameObj<JumpHole>"
+        },
+        {
+          "Name" : "ManholeCover",
+          "Function" : "NameObjFactory::createNameObj<ManholeCover>"
+        },
+        {
+          "Name" : "RailMoveTimerObj",
+          "Function" : "NameObjFactory::createNameObj<RailMoveTimerObj>"
+        },
+        {
+          "Name" : "RepeatTimerSwitchingBlock",
+          "Function" : "NameObjFactory::createNameObj<RepeatTimerSwitchingBlock>"
+        },
+        {
+          "Name" : "SimpleEnvironmentObj",
+          "Function" : "NameObjFactory::createNameObj<SimpleEnvironmentObj>"
+        },
+        {
+          "Name" : "SimpleTextureSwitchChangeObj",
+          "Function" : "NameObjFactory::createNameObj<SimpleTextureSwitchChangeObj>"
+        },
+        {
+          "Name" : "WoodBox",
+          "Function" : "NameObjFactory::createNameObj<WoodBox>"
+        }
+      ]
+    }
+  ]
+}

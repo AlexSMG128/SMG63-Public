@@ -1,0 +1,6 @@
+{
+  "Name": "ExtPostFogArea",
+  "Author": "Gabbo",
+  "Description": "New functionality for PostFogArea",
+  "InstallDependencies": ["Syati_Init"]
+}

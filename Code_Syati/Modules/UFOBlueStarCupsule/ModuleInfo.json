@@ -1,0 +1,17 @@
+{
+  "Name": "SMG1: Unused Pull Star UFO",
+  "Author": "BlueXD",
+  "Description": "Adds the unused Pull Star UFO that was unused in SMG1's Game Files",
+  
+  "ModuleData": [
+    {
+      "NameObjFactory": [
+        {
+          "Name": "UFOBlueStarCupsule",
+          "Function": "NameObjFactory::createNameObj<BlueStarCupsulePlanet>",
+		  "Include": "main.h"
+          }
+        ]
+      }
+    ]
+  }

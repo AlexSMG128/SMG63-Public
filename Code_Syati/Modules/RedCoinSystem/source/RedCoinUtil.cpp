@@ -32,7 +32,6 @@ namespace RedCoinUtil {
 	}
 
 	bool tryAppearLinkedRedCoin(LiveActor* pSourceActor, const TVec3f& pPosition) {
-		OSReport("Red Coin Spawning for %s\n", pSourceActor->mName);
 		ExtActorActionKeeper* pKeeper = (ExtActorActionKeeper*)pSourceActor->mActionKeeper;
 		RedCoin* pCoin = (RedCoin*)pKeeper->mNewActor;
 

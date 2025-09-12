@@ -1,10 +1,10 @@
 #include "PaintingEntranceObj.h"
-
+#include "GalaxyLevelEngine.h"
 PaintingEntranceObj::PaintingEntranceObj(const char* pName) : LiveActor(pName)
 {
-	mEntranceCollision = NULL;
 	mCameraInfo = NULL;
-	mCooldown = 0;
+	mTargetDest = 0;
+	mZoneID = 0;
 }
 
 void PaintingEntranceObj::init(const JMapInfoIter& rIter)
@@ -23,100 +23,86 @@ void PaintingEntranceObj::init(const JMapInfoIter& rIter)
 
 	if (!MR::isExistStageSwitchAwake(rIter))
 		makeActorAppeared();
+	
+	MR::getJMapInfoArg2NoInit(rIter, &mTargetDest);
 
-	mEntranceCollision = MR::createCollisionPartsFromLiveActor(this, "BackWall", getSensor("Main"), MR::CollisionScaleType_AutoEqualScale);
-
-	MR::invalidateCollisionParts(mCollisionParts);
-	MR::invalidateCollisionParts(mEntranceCollision);
+	mZoneID = MR::getPlacedZoneId(rIter);
 
 	MR::initActorCamera(this, rIter, &mCameraInfo);
+	
+	if (MR::isValidSwitchA(this))
+		MR::onSwitchA(this);
 
 	initNerve(&NrvPaintingEntranceObj::NrvWait::sInstance, 0);
 }
 
-bool PaintingEntranceObj::receiveOtherMsg(u32 msg, HitSensor* pSender, HitSensor* pReceiver)
-{
-	if (msg == ACTMES_END_DEMO)
-		mCooldown = 60;
+void PaintingEntranceObj::initAfterPlacement() {
+	if (MR::isOnSwitchB(this))
+		setNerve(&NrvPaintingEntranceObj::NrvExit::sInstance);
+}
 
-	if (!isNerve(&NrvPaintingEntranceObj::NrvWait::sInstance))
-		return false;
+void PaintingEntranceObj::exeWait() {
+	MR::startBtkAndSetFrameAndStop(this, "WarpRing", MR::getBtkFrameMax(this));
 
-	if (pSender != MR::getPlayerBodySensor() || MR::isMsgSpinStormRange(msg))
-		return false;
-
-	if (pReceiver != getSensor("Main"))
-		return false;
-
-	if (!MR::isDemoActive() && mCooldown <= 0)
+	if (MR::isOnSwitchB(this)) {
 		setNerve(&NrvPaintingEntranceObj::NrvEnter::sInstance);
+	}
+}
 
-	return false;
+void PaintingEntranceObj::exeEnter() {
+	MR::offDrawEffect(MarioAccess::getPlayerActor());
+	if (MR::isFirstStep(this)) {
+		MR::hidePlayer();
+		DemoStartRequestUtil::startDemoSystem(this, "Enter", 0, DemoStartInfo::DEMOTYPE_0, DemoStartInfo::CINEMAFRAMETYPE_0, DemoStartInfo::STARPOINTERTYPE_0, DemoStartInfo::DELETEEFFECTYPE_0, 0);
+		MR::offPlayerControl();
+		MR::disableStarPointerShootStarPiece();
+		MR::startBtk(this, "WarpRing");
+		MR::startActorCameraTargetSelf(this, mCameraInfo, -1);
+		MR::deactivateDefaultGameLayout();
+		MR::startActionSound(this, "OnEnter", -1, -1, -1);
+
+		if (MR::isValidSwitchA(this))
+			MR::offSwitchA(this);
+	}
+
+	if (MR::isStep(this, 75))
+		MR::closeSystemWipeWhiteFade(60);
+
+	if (MR::isStep(this, 145)) {
+		JMapInfo* pInfo = GLE::getChangeSceneListInfoFromZone(mZoneID);
+		GLE::requestMoveStageFromJMapInfo(pInfo, mTargetDest);
+	}
+}
+
+void PaintingEntranceObj::exeExit() {
+	if (MR::isLessStep(this, 60))
+		return;
+
+	if (MR::isStep(this, 60)) {
+		MR::startBtk(this, "WarpRing");
+		MR::startActionSound(this, "OnExit", -1, -1, -1);
+	}
+
+	if (MR::isBtkOneTimeAndStopped(this) && !MR::isDemoActive())
+		setNerve(&NrvPaintingEntranceObj::NrvWait::sInstance); //Quirky direct setNerve
 }
 
 namespace NrvPaintingEntranceObj {
 	void NrvWait::execute(Spine* pSpine) const {
-		PaintingEntranceObj* pActor = (PaintingEntranceObj*)pSpine->mExecutor;
+		((PaintingEntranceObj*)pSpine->mExecutor)->exeWait();
 
-		MR::startBtkAndSetFrameAndStop(pActor, "WarpRing", MR::getBtkFrameMax(pActor));
-
-		if (pActor->mCooldown > 0)
-		{
-			pActor->mCooldown--;
-			return;
-		}
-
-		if (MR::isDemoActive())
-		{
-			if (MR::isNearPlayer(pActor, 500.f))
-			{
-				//OSReport("Cutscene Begin\n");
-				pSpine->setNerve(&NrvPaintingEntranceObj::NrvExit::sInstance);
-			}
-			MR::invalidateCollisionParts(pActor->mCollisionParts);
-			MR::invalidateCollisionParts(pActor->mEntranceCollision);
-		}
-		else if (MR::isGreaterStep(pActor, 30))
-		{
-			MR::validateCollisionParts(pActor->mCollisionParts);
-			MR::validateCollisionParts(pActor->mEntranceCollision);
-		}
 	}
 	NrvWait(NrvWait::sInstance);
 
 	void NrvEnter::execute(Spine* pSpine) const {
 		// Play animation & Camera & Warp
-		PaintingEntranceObj* pActor = (PaintingEntranceObj*)pSpine->mExecutor;
-		if (MR::isFirstStep(pActor))
-		{
-			MR::offPlayerControl();
-			MR::startBtk(pActor, "WarpRing");
-			MR::startActorCameraTargetSelf(pActor, pActor->mCameraInfo, -1);
-			MR::deactivateDefaultGameLayout();
-			MR::startActionSound(pActor, "OnEnter", -1, -1, -1);
-		}
-		if (MR::isGreaterStep(pActor, 30))
-			MR::hidePlayer();
-		if (MR::isBtkOneTimeAndStopped(pActor) && MR::isValidSwitchA(pActor))
-			MR::onSwitchA(pActor);
+			((PaintingEntranceObj*)pSpine->mExecutor)->exeEnter();
 	}
 	NrvEnter(NrvEnter::sInstance);
 
 	void NrvExit::execute(Spine* pSpine) const {
 		// Just play the animation, and return to wait when the cutscene ends
-		PaintingEntranceObj* pActor = (PaintingEntranceObj*)pSpine->mExecutor;
-
-		if (MR::isLessStep(pActor, 60))
-			return;
-
-		if (MR::isStep(pActor, 60))
-		{
-			MR::startBtk(pActor, "WarpRing");
-			MR::startActionSound(pActor, "OnExit", -1, -1, -1);
-		}
-
-		if (MR::isBtkOneTimeAndStopped(pActor) && !MR::isDemoActive())
-			pSpine->setNerve(&NrvPaintingEntranceObj::NrvWait::sInstance); //Quirky direct setNerve
+		((PaintingEntranceObj*)pSpine->mExecutor)->exeExit();
 	}
 	NrvExit(NrvExit::sInstance);
 }

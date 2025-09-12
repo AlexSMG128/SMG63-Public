@@ -1,0 +1,22 @@
+{
+  "Name": "WatchTowerRotateStep",
+  "Author": "Aurum, Someone, Shibboleet",
+  "Description": "SMG1 Actor Port: WatchTowerRotateStep",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init", "PTUtils"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "WatchTowerRotateStep",
+          "Function" : "createExtActor<pt::WatchTowerRotateStep>",
+          "Include" : "WatchTowerRotateStep.h"
+        }
+      ]
+    }
+  ]
+}

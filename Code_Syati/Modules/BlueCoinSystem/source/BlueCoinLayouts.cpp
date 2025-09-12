@@ -1,6 +1,7 @@
 #include "BlueCoinUtil.h"
 #include "BlueCoinLayouts.h"
 #include "Game/Screen/PauseMenuExt.h"
+#include "ExtGameDataUtil.h"
 #include "GeneralUtil.h"
 
 #if defined TWN || defined KOR
@@ -247,16 +248,30 @@ void initBlueCoinCounterFileInfo(LayoutActor* pLayout) {
     MR::connectToSceneLayout(pLayout);
     MR::showPaneRecursive(pLayout, "BlueCoinFileInfo");
     MR::setTextBoxFormatRecursive(pLayout, "ShaBlueCoinFileInfo", counterPictureFonts);
+    *((u32*)pLayout+0x44) = 0;
 }
 
 kmCall(0x8046D908, initBlueCoinCounterFileInfo); // bl initBlueCoinCounterFileInfo
 
-void setBlueCoinCounterFileInfo(LayoutActor* pLayout, const char* pStr, s32 fileID) {
-    MR::setTextBoxArgNumberRecursive(pLayout, "ShaBlueCoinFileInfo", BlueCoinUtil::getTotalBlueCoinNum(fileID - 1, false), 0);
-    MR::setTextBoxNumberRecursive(pLayout, pStr, fileID);
+s32 getBlueCoinNumFromUserFile(UserFile* pFile) {
+    int* pFileSelector = 0;
+    asm("mr %0, r30" : "=r" (pFileSelector));
+    u32 pFileSelectInfo = *((u32*)pFileSelector+0x30);
+    BlueCoinDataStorage* pStorage = ((ExtGameDataHolder*)pFile->mGameDataHolder)->mBlueCoinDataStorage;
+    *((u32*)pFileSelectInfo+0x44) = BlueCoinUtil::getTotalBlueCoinNum(pStorage, false);
+    return pFile->getPowerStarNum();
 }
 
-kmCall(0x8046DCF8, setBlueCoinCounterFileInfo); // bl setBlueCoinCounterFileInfo
+kmCall(0x802504A4, getBlueCoinNumFromUserFile);
+
+kmWrite32(0x8024FB24, 0x38600114); // li r3, 0x114
+
+void displayNewVar(LayoutActor* pActor, const char* pStr, s32 l1) {
+    MR::setTextBoxNumberRecursive(pActor, pStr, l1);
+    MR::setTextBoxArgNumberRecursive(pActor, "ShaBlueCoinFileInfo", *((u32*)pActor+0x44), 0);
+}
+
+kmCall(0x8046DCF8, displayNewVar);
 
 #ifdef DISABLED
 void initGalaxyInfoBlueCoinCount(LayoutActor* actor) {

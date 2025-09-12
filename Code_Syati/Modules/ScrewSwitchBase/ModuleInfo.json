@@ -1,0 +1,25 @@
+{
+  "Name": "Screw Switches in SMG2",
+  "Author": "Aurum",
+  "Description": "The screwable screws from Toy Time Galaxy",
+
+  "ModuleData": [
+    {
+      "NameObjFactory": [
+        {
+          "Name": "ScrewSwitch",
+          "Function": "createExtActor<pt::ScrewSwitch>",
+          "Include": "ScrewSwitchBase.h"
+        },
+        {
+          "Name": "ScrewSwitchReverse",
+          "Function": "createExtActor<pt::ScrewSwitchReverse>"
+        },
+        {
+          "Name": "ValveSwitch",
+          "Function": "createExtActor<pt::ValveSwitch>"
+        }
+      ]
+    }
+  ]
+}

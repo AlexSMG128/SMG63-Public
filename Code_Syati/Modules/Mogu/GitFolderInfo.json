@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/Mogu.arc",
+    "disc/ObjectData/MoguHole.arc",
+    "disc/ObjectData/MoguStone.arc",
+    "include/Mogu.h",
+    "include/MoguStone.h",
+    "source/Mogu.cpp",
+    "source/MoguStone.cpp"
+  ]
+}

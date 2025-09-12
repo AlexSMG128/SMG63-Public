@@ -1,0 +1,22 @@
+{
+  "Name": "PomponPlant",
+  "Author": "Someone",
+  "Description": "SMG1 Actor Port: PomponPlant",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "PomponPlant",
+          "Function" : "createExtActor<pt::PomponPlant>",
+          "Include" : "PomponPlant.h"
+        }
+      ]
+    }
+  ]
+}

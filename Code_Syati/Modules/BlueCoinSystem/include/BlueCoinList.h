@@ -1,3 +1,4 @@
+#pragma once
 #include "syati.h"
 #include "BlueCoinUtil.h"
 #include "Game/Screen/BackButton.h"
@@ -41,7 +42,6 @@ public:
     bool isEntryBlank(ListEntry* pEntry);
     void setEntryBlank(ListEntry* pEntry);
     void setEntryNotBlank(ListEntry* pEntry);
-    void printListDebugInfo();
 
     ListEntry* mListEntries[7];
     BackButtonCancelB* mBackButton;
@@ -63,11 +63,11 @@ public:
 
 namespace NrvBlueCoinList {
     NERVE(NrvInit);
-    NERVE(NrvAppear);
-    NERVE(NrvChange);
-    NERVE(NrvChangeFail);
-    NERVE(NrvWait);
-    NERVE(NrvClose);
+    NERVE_DECL_EXE(NrvAppear, BlueCoinList, Appear);
+    NERVE_DECL_EXE(NrvChange, BlueCoinList, Change);
+    NERVE_DECL_EXE(NrvChangeFail, BlueCoinList, ChangeFail);
+    NERVE_DECL_EXE(NrvWait, BlueCoinList, Wait);
+    NERVE_DECL_EXE(NrvClose, BlueCoinList, Close);
 };
 
 extern "C" {

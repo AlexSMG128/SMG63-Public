@@ -20,11 +20,15 @@ void BlueCoin::init(const JMapInfoIter& rIter) {
     mCoinInfo.mInitFunction = false;
     
     const char* name = "BlueCoin";
-    
+    bool demoCast = false;
     if (MR::isValidInfo(rIter)) {
         MR::getJMapInfoArg0NoInit(rIter, &mID); 
         MR::getJMapInfoArg1NoInit(rIter, &mLaunchVelocity);
+        MR::getJMapInfoArg2NoInit(rIter, &demoCast);
     }
+
+    if (demoCast)
+        MR::registerDemoSimpleCastAll(this);
     
     if (BlueCoinUtil::isBlueCoinGotCurrentFile(mID))
         name = "BlueCoinClear";

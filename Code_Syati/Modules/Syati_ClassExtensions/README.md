@@ -1,0 +1,1 @@
+Allows multiple modules to declare additional variables/functions for the same pre-existing classes.

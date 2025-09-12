@@ -1,0 +1,94 @@
+{
+  "Name": "Syati Class Extensions",
+  "Author": "[Primary Module]",
+  "Description": "Allows multiple modules to declare additional variables/functions for the same pre-existing classes.",
+  "APIId": "Syati_ClassExtensions_API",
+
+  "ModuleExtensionDefinition": [
+    {
+      "Name": "ClassExtensions",
+      "CodeGenTemplateSources": [
+        "GEN_ClassExtensionTemplate.h",
+        "GEN_ClassExtensionKamek.cpp"
+      ],
+      "CodeGenTemplateDestinations": [
+        "codebuildexport/ModuleData_{0}_Ext.h",
+        "codebuild/ModuleData_{0}_Ext.cpp"
+      ],
+      "Variables": [
+        "ClassName",
+        "FuncOrVar",
+        "HookAddr",
+        "Include",
+        "Extern"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "ClassName",
+          "ReplaceFormatData": "{0}"
+        },
+        {
+          "ReplaceTargetName": "NewFuncVarList",
+          "ReplaceFormatData": "{1}"
+        },
+        {
+          "ReplaceTargetName": "HookAddr",
+          "ReplaceFormatData": "{2}"
+        },
+        {
+          "ReplaceTargetName": "IncludeList",
+          "ReplaceFormatData": "#include \"{3}\""
+        },
+        {
+          "ReplaceTargetName": "ExternList",
+          "ReplaceFormatData": "{4}"
+        }
+      ]
+    },
+    {
+      "Name": "ClassExtensionsMajorMinor",
+      "CodeGenTemplateSources": [
+        "GEN_ClassExtensionTemplate.h",
+        "GEN_ClassExtensionKamekMajorMinor.cpp"
+      ],
+      "CodeGenTemplateDestinations": [
+        "codebuildexport/ModuleData_{0}_Ext.h",
+        "codebuild/ModuleData_{0}_Ext.cpp"
+      ],
+      "Variables": [
+        "ClassName",
+        "FuncOrVar",
+        "HookAddrMajor",
+        "HookAddrMinor",
+        "Include",
+        "Extern"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "ClassName",
+          "ReplaceFormatData": "{0}"
+        },
+        {
+          "ReplaceTargetName": "NewFuncVarList",
+          "ReplaceFormatData": "{1}"
+        },
+        {
+          "ReplaceTargetName": "HookAddrMajor",
+          "ReplaceFormatData": "{2}"
+        },
+        {
+          "ReplaceTargetName": "HookAddrMinor",
+          "ReplaceFormatData": "{3}"
+        },
+        {
+          "ReplaceTargetName": "IncludeList",
+          "ReplaceFormatData": "#include \"{4}\""
+        },
+        {
+          "ReplaceTargetName": "ExternList",
+          "ReplaceFormatData": "{5}"
+        }
+      ]
+    }
+  ]
+}

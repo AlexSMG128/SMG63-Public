@@ -1,0 +1,37 @@
+{
+  "Name": "Yoshi Eating Extensions",
+  "Author": "Super Hackio",
+  "Description": "Allows more objects to be consumed by Yoshi.",
+  "InstallDependencies": [ "Syati_ClassExtensions" ],
+  "ModuleDependancies": [
+    "Syati_ClassExtensions_API"
+  ],
+
+  "ModuleData": [
+    {
+      "ClassExtensions": [
+        {
+          "ClassName": "SamboHead",
+          "FuncOrVar": "YoshiLockOnTarget* mYoshiTarget;",
+          "HookAddr": "0x8033DC44",
+          "Include": "Game/Enemy/SamboHead.h",
+          "Extern": "class YoshiLockOnTarget;"
+        },
+        {
+          "ClassName": "BasaBasa",
+          "FuncOrVar": "YoshiLockOnTarget* mYoshiTarget;",
+          "HookAddr": "0x8033CA04",
+          "Include": "Game/Enemy/BasaBasa.h",
+          "Extern": "class YoshiLockOnTarget;"
+        },
+        {
+          "ClassName": "KameckTurtle",
+          "FuncOrVar": "YoshiLockOnTarget* mYoshiTarget;",
+          "HookAddr": "0x801A6E00",
+          "Include": "Game/Enemy/KameckTurtle.h",
+          "Extern": "class YoshiLockOnTarget;"
+        }
+      ]
+    }
+  ]
+}

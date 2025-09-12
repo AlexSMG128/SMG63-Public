@@ -1,0 +1,89 @@
+{
+  "Name": "Syati Object Factories",
+  "Author": "[Primary Module]",
+  "Description": "Provides Object Creation factories that other modules can register to. This allows new objects to be recognized by the game.",
+
+  "ModuleExtensionDefinition": [
+    {
+      "Name": "NameObjFactory",
+      "CodeGenSource": "GEN_NameObjFactory.h",
+      "CodeGenDestination": "codebuild/ModuleData_NameObjFactory.h",
+      "Variables": [
+        "Name",
+        "Function",
+        "Include"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "NameObjFactoryList",
+          "ReplaceFormatData": "{{ \"{0}\", {1} }},"
+        },
+        {
+          "ReplaceTargetName": "IncludeList",
+          "ReplaceFormatData": "#include \"{2}\""
+        }
+      ]
+    },
+    {
+      "Name": "ProductMapObj",
+      "CodeGenSource": "GEN_ProjectMapCreator.h",
+      "CodeGenDestination": "codebuild/ModuleData_ProjectMapCreator.h",
+      "Variables": [
+        "Name",
+        "Function",
+        "Include"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "ProductMapObjList",
+          "ReplaceFormatData": "{{ \"{0}\", {1} }},"
+        },
+        {
+          "ReplaceTargetName": "IncludeList",
+          "ReplaceFormatData": "#include \"{2}\""
+        }
+      ]
+    },
+    {
+      "Name": "SceneObjHolder",
+      "CodeGenSource": "GEN_SceneObjHolder.h",
+      "CodeGenDestination": "codebuild/ModuleData_SceneObjHolder.h",
+      "Variables": [
+        "Name",
+        "Function",
+        "Include"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "SceneObjList",
+          "ReplaceFormatData": "{{ {0}, {1} }},"
+        },
+        {
+          "ReplaceTargetName": "IncludeList",
+          "ReplaceFormatData": "#include \"{2}\""
+        }
+      ]
+    },
+    {
+      "Name": "AreaObjMgr",
+      "CodeGenSource": "GEN_ExtAreaObjMgr.h",
+      "CodeGenDestination": "codebuild/ModuleData_ExtAreaObjMgr.h",
+      "Variables": [
+        "Name",
+        "MaxCount",
+        "Function",
+        "Include"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "ManagerEntryList",
+          "ReplaceFormatData": "    {{\"{0}\", {1}, {2} }},"
+        },
+        {
+          "ReplaceTargetName": "IncludeList",
+          "ReplaceFormatData": "#include \"{3}\""
+        }
+      ]
+    }
+  ]
+}

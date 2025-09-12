@@ -1,0 +1,8 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/LavaBallRisingPlanetLava.arc",
+    "include/LavaBallRisingPlanetLava.h",
+    "source/LavaBallRisingPlanetLava.cpp"
+  ]
+}

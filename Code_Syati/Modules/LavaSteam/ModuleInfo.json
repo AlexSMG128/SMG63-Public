@@ -1,0 +1,24 @@
+{
+  "Name": "LavaSteam",
+  "Author": "Evanbowl",
+  "Description": "A steam geyser found in Melty Molten Galaxy. It damages the player if contact is made with the steam.",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init"],
+  "BuildTasks": [
+    {
+      "Task": "Copy",
+      "From": "disc/",
+      "To": "../../Output/disc/"
+    }
+  ],
+  "ModuleData" : [
+    {
+      "NameObjFactory": [
+        {
+          "Name" : "LavaSteam",
+          "Function" : "createExtActor<LavaSteam>",
+          "Include" : "LavaSteam.h"
+        }
+      ]
+    }
+  ] 
+}

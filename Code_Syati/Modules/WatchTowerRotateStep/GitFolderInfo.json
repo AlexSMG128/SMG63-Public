@@ -1,0 +1,9 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/WatchTowerRotateStep.arc",
+    "disc/ObjectData/WatchTowerRotateStepLift.arc",
+    "include/WatchTowerRotateStep.h",
+    "source/WatchTowerRotateStep.cpp"
+  ]
+}

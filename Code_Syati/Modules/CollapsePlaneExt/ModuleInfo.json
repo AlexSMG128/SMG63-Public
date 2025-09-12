@@ -1,0 +1,6 @@
+{
+  "Name": "CollapsePlaneExt",
+  "Author": "Evanbowl",
+  "Description": "PTD: CollapsePlane Custom Behaviors",
+  "InstallDependencies": ["Syati_Init"]
+}

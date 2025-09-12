@@ -1,0 +1,17 @@
+{
+  "Version": 1,
+  "Files": [
+    "Particles/Effects/Sign.json",
+    "Particles/Effects/SignInd.json",
+    "Particles/Effects/Steam.json",
+    "Particles/Effects/SteamInd.json",
+    "Particles/Particles/LavaSteam00.json",
+    "Particles/Particles/LavaSteam01.json",
+    "Particles/Particles/LavaSteamInd00.json",
+    "Particles/Particles/LavaSteamSign00.json",
+    "Particles/Particles/LavaSteamSignInd00.json ",
+    "disc/ObjectData/LavaSteam.arc",
+    "include/LavaSteam.h",
+    "source/LavaSteam.cpp"
+  ]
+}

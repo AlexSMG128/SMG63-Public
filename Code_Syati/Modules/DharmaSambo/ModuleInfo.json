@@ -1,0 +1,22 @@
+{
+  "Name": "DharmaSambo",
+  "Author": "Aurum",
+  "Description": "SMG1 Enemy Port: DharmaSambo",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init", "PTUtils"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "DharmaSambo",
+          "Function" : "createExtActor<pt::DharmaSambo>",
+          "Include" : "DharmaSambo.h"
+        }
+      ]
+    }
+  ]
+}

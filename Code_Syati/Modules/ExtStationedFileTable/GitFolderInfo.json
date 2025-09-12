@@ -1,0 +1,7 @@
+{
+  "Version": 1,
+  "Files": [
+    "codegen/GEN_ExtStationedFileTable.h",
+    "source/ExtStationedFileTable.cpp"
+  ]
+}

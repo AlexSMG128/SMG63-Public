@@ -1,0 +1,7 @@
+{
+  "Version": 1,
+  "Files": [
+    "include/GCaptureBreakArea.h",
+    "source/GCaptureBreakArea.cpp"
+  ]
+}

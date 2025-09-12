@@ -1,0 +1,22 @@
+{
+  "Name": "Mogu",
+  "Author": "Aurum",
+  "Description": "SMG1 Enemy Port: Mogu",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "Mogu",
+          "Function" : "createExtActor<pt::Mogu>",
+          "Include" : "Mogu.h"
+        }
+      ]
+    }
+  ]
+}

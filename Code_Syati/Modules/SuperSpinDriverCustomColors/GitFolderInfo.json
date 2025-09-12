@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/SpinDriverPath.arc",
+    "disc/ObjectData/SuperSpinDriver.arc",
+    "disc/ObjectData/SuperSpinDriverEmpty.arc",
+    "disc/ObjectData/SuperSpinDriverGreen.arc",
+    "include/Game/MapObj/SpinDriverPathDrawInitExt.h",
+    "include/SuperSpinDriverCustomColors.h",
+    "source/SuperSpinDriverCustomColors.cpp"
+  ]
+}

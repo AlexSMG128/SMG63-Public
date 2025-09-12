@@ -1,0 +1,9 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/ChooChooTrain.arc",
+    "disc/ObjectData/ChooChooTrainBody.arc",
+    "include/ChooChooTrain.h",
+    "source/ChooChooTrain.cpp"
+  ]
+}

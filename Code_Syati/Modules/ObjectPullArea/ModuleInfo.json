@@ -1,0 +1,35 @@
+{
+    "Name": "ObjectPullArea",
+    "Author": "Bavario, AwesomeTMC",
+    "Description": "An area that when entered, allows objects to be pulled towards the player.",
+    "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init", "Syati_CommonFunctionHooks"],
+    "ModuleData" : [
+      {
+        "NameObjFactory": [
+          {
+            "Name" : "ObjectPullArea",
+            "Function" : "createExtActor<ObjectPullArea>",
+            "Include" : "ObjectPullArea.h"
+          }
+        ]
+      },
+      {
+        "AreaObjMgr" : [
+          {
+            "Name" : "ObjectPullArea",
+            "MaxCount" : "64",
+            "Function" : "AreaObjContainer::createManager<AreaObjMgr>"
+          }
+        ]
+      },
+      {
+        "OnAnySceneDestroy" : [
+          {
+            "Name" : "Reset ObjectPullConfig",
+            "Function" : "ObjectPullConfig::clear",
+            "Include" : "ObjectPullArea.h"
+          }
+        ]
+      }
+    ]
+}

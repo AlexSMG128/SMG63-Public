@@ -5,14 +5,15 @@
 class PaintingEntranceObj : public LiveActor {
 public:
 	PaintingEntranceObj(const char*);
-
 	virtual void init(const JMapInfoIter&);
+	virtual void initAfterPlacement();
+	void exeWait();
+	void exeEnter();
+	void exeExit();
 
-	virtual bool receiveOtherMsg(u32 msg, HitSensor* pSender, HitSensor* pReceiver);
-
-	CollisionParts* mEntranceCollision;
 	ActorCameraInfo* mCameraInfo;
-	s32 mCooldown;
+	s32 mTargetDest;
+	s32 mZoneID;
 };
 
 namespace NrvPaintingEntranceObj {

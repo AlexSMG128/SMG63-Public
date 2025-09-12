@@ -1,0 +1,45 @@
+{
+  "Name": "Custom Launch Star Colors",
+  "Author": "Aurum, Evanbowl, Lord-Giganticus",
+  "Description": "PTD: Custom Launch Star Colors",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init"],
+  "ModuleData" : [
+    {
+      "NameObjFactory": [
+        {
+          "Name" : "SuperSpinDriverGreen",
+          "Function" : "pt::createSuperSpinDriverCustomColor<1>",
+          "Include" : "SuperSpinDriverCustomColors.h"
+        },
+        {
+          "Name" : "SuperSpinDriverRed",
+          "Function" : "pt::createSuperSpinDriverCustomColor<3>"
+        },
+        {
+          "Name" : "SuperSpinDriverBlue",
+          "Function" : "pt::createSuperSpinDriverCustomColor<4>"
+        },
+        {
+          "Name" : "SuperSpinDriverRainbow",
+          "Function" : "pt::createSuperSpinDriverCustomColor<5>"
+        },
+        {
+          "Name" : "SuperSpinDriverPurple",
+          "Function" : "pt::createSuperSpinDriverCustomColor<6>"
+        },
+        {
+          "Name" : "SuperSpinDriverBlack",
+          "Function" : "pt::createSuperSpinDriverCustomColor<7>"
+        },
+        {
+          "Name" : "SuperSpinDriverWhite",
+          "Function" : "pt::createSuperSpinDriverCustomColor<8>"
+        },
+        {
+          "Name" : "SuperSpinDriverYellow",
+          "Function" : "pt::createSuperSpinDriverCustomColor<9>"
+        }
+      ]
+    }
+  ]
+}

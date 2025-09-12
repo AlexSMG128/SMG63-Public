@@ -1,0 +1,17 @@
+{
+  "Name": "SMG2 OpenGhost",
+  "Author": "Super Hackio",
+  "Description": "Cosmic Races in SMG2",
+
+  "ModuleData": [
+    {
+      "NameObjFactory": [
+        {
+          "Name": "GhostPlayer",
+          "Function": "createExtActor<GhostPlayer>",
+          "Include": "GhostPlayer.h"
+        }
+      ]
+    }
+  ]
+}

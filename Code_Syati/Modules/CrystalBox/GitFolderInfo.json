@@ -1,0 +1,9 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/CrystalBox.arc",
+    "disc/ObjectData/CrystalBoxBreak.arc",
+    "include/CrystalBox.h",
+    "source/CrystalBox.cpp"
+  ]
+}

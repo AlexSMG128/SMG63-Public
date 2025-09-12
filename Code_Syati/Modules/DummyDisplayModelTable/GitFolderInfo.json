@@ -1,0 +1,13 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/SystemData/DummyDisplayModelTable.arc",
+    "include/DummyDisplayModelTable.h",
+    "source/DummyDisplayModelTable.cpp",
+    "symbols/JPN.txt",
+    "symbols/KOR.txt",
+    "symbols/PAL.txt",
+    "symbols/TWN.txt",
+    "symbols/USA.txt"
+  ]
+}

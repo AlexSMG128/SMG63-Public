@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/IceLuigi.arc",
+    "disc/ObjectData/IceMario.arc",
+    "disc/ObjectData/IceMarioHandL.arc",
+    "disc/ObjectData/IceMarioHandR.arc",
+    "disc/ObjectData/IceStep.arc",
+    "disc/ObjectData/IceStepA.arc",
+    "disc/ObjectData/IceStepNoSlip.arc",
+    "disc/ObjectData/PowerUpFoo.arc",
+    "disc/ObjectData/PowerUpIce.arc",
+    "include/MorphFooAndIce.h",
+    "source/MorphFooAndIce.cpp"
+  ]
+}

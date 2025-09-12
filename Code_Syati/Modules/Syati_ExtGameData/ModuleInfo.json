@@ -1,0 +1,36 @@
+{
+  "Name": "Syati Extended Save Files",
+  "Author": "VTXG, Evanbowl",
+  "Description": "A module that allows the creation of new binary data chunks in GameData.bin.",
+  "APIId": "Syati_ExtGameData_API",
+  "CompilerFlags": [
+    "-DEXT_GAME_DATA"
+  ],
+  "ModuleExtensionDefinition": [
+    {
+      "Name": "NewSaveChunk",
+      "CodeGenSource": "GEN_ExtGameData.h",
+      "CodeGenDestination": "codebuildexport/ModuleData_ExtGameData.h",
+      "Variables": [
+        "ChunkMemberType",
+        "ChunkMemberName",
+        "ChunkCreationFunc",
+        "Include"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "NewChunkCreateList",
+          "ReplaceFormatData": "{2},"
+        },
+        {
+          "ReplaceTargetName": "NewChunkMemberList",
+          "ReplaceFormatData": "{0}* {1};"
+        },
+        {
+          "ReplaceTargetName": "IncludeList",
+          "ReplaceFormatData": "#include \"{3}\""
+        }
+      ]
+    }
+  ]
+}

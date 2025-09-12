@@ -1,0 +1,9 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/JumpGuarder.arc",
+    "disc/ObjectData/JumpGuarderHead.arc",
+    "include/JumpGuarder.h",
+    "source/JumpGuarder.cpp"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+    "Name": "ForbidWaterSearchArea",
+    "Author": "Bavario",
+    "Description": "Enables ForbidWaterSearchArea to be used.",
+    "InstallDependencies": ["Syati_ObjectFactories"],
+    "ModuleData" : [
+      {
+        "NameObjFactory" : [
+          {
+            "Name" : "ForbidWaterSearchArea",
+            "Function" : "createExtActor<AreaObj>",
+            "Include" : "Game/AreaObj.h"
+          }
+        ]
+      },
+      {
+        "AreaObjMgr" : [
+          {
+            "Name" : "ForbidWaterSearchArea",
+            "MaxCount" : "64",
+            "Function" : "AreaObjContainer::createManager<AreaObjMgr>"
+          }
+        ]
+      }
+    ]
+}

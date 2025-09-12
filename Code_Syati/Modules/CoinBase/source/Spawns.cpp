@@ -89,7 +89,6 @@ namespace CoinBaseSpawnUtil {
     CoinBase* createCustomCoin(LiveActor* pSourceActor, const JMapInfoIter& rIter, s32 arg, s32 type) {
     ExtActorActionKeeper* pKeeper = (ExtActorActionKeeper*)pSourceActor->mActionKeeper;
         if (type > -1) {
-            OSReport("Creating coin type %d for enemy %s with arg %d\n", type, pSourceActor->mName, arg);
             CoinCreateInfo* pInfo = &cCoinCreateInfo[1];
 
             for (s32 i = 1; i < cNumNewCoinCreateInfo; i++) {

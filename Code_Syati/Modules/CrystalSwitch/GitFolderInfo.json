@@ -1,0 +1,8 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/CrystalSwitch.arc",
+    "include/CrystalSwitch.h",
+    "source/CrystalSwitch.cpp"
+  ]
+}

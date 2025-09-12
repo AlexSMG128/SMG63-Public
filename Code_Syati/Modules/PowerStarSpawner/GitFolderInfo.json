@@ -1,0 +1,7 @@
+{
+  "Version": 1,
+  "Files": [
+    "include/PowerStarSpawner.h",
+    "source/PowerStarSpawner.cpp"
+  ]
+}

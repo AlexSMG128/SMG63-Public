@@ -1,0 +1,22 @@
+{
+  "Name": "LavaBallRisingPlanetLava",
+  "Author": "Aurum",
+  "Description": "PT: LavaBallRisingPlanetLava/ScaleMapObj Class",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData" : [
+    {
+      "ProductMapObj" : [
+        {
+          "Name" : "ScaleMapObj",
+          "Function" : "createExtActor<pt::LavaBallRisingPlanetLava>",
+          "Include" : "LavaBallRisingPlanetLava.h"
+        }
+      ]
+    }
+  ]
+}

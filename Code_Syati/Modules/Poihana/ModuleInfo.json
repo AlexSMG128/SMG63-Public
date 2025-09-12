@@ -1,0 +1,22 @@
+{
+  "Name": "Poihana",
+  "Author": "Aurum",
+  "Description": "SMG1 Enemy Port: Poihana",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "Poihana",
+          "Function" : "createExtActor<pt::Poihana>",
+          "Include" : "Poihana.h"
+        }
+      ]
+    }
+  ]
+}

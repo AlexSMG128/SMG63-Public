@@ -1,0 +1,17 @@
+{
+  "Name": "TransparentWall",
+  "Author": "Aurum",
+  "Description": "SMG1 Class Port: TransparentWall",
+  "InstallDependencies": ["Syati_ObjectFactories", "PTUtils"],
+  "ModuleData" : [
+    {
+      "ProductMapObj" :[
+        {
+          "Name" : "TransparentWall",
+          "Function" : "createExtActor<pt::TransparentWall>",
+          "Include" : "TransparentWall.h"
+        }
+      ]
+    }
+  ]
+}

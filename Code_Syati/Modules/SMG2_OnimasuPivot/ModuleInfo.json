@@ -1,0 +1,17 @@
+{
+  "Name": "SMG2 OnimasuPivot",
+  "Author": "Super Hackio, HeadPenguin",
+  "Description": "The alternative Tox Box variant used in Toy Time Galaxy",
+
+  "ModuleData": [
+    {
+      "NameObjFactory": [
+        {
+          "Name": "OnimasuPivot",
+          "Function": "createExtActor<OnimasuPivot>",
+          "Include": "Game/Enemy/OnimasuPivot.h"
+        }
+      ]
+    }
+  ]
+}

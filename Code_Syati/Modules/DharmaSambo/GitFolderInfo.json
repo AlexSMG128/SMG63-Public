@@ -1,0 +1,9 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/DharmaSambo.arc",
+    "disc/ObjectData/DharmaSamboParts.arc",
+    "include/DharmaSambo.h",
+    "source/DharmaSambo.cpp"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "GCaptureBreakArea",
+  "Author": "Bavario",
+  "Description": "PTD: Breaks the current GCapture bubble when entered.",
+  "InstallDependencies": ["Syati_ObjectFactories"],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "GCaptureBreakArea",
+          "Function" : "createExtActor<GCaptureBreakArea>",
+          "Include" : "GCaptureBreakArea.h"
+        }
+      ]
+    },
+    {
+      "AreaObjMgr" : [
+        {
+          "Name" : "GCaptureBreakArea",
+          "MaxCount" : "64",
+          "Function" : "AreaObjContainer::createManager<AreaObjMgr>"
+        }
+      ]
+    }
+  ]
+}

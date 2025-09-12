@@ -1,0 +1,29 @@
+{
+  "Name": "Kamella in SMG2",
+  "Author": "Super Hackio",
+  "Description": "She's here for her revenge...",
+
+  "ModuleData": [
+    {
+      "NameObjFactory": [
+        {
+          "Name": "BossKameck",
+          "Function": "createExtActor<BossKameck>",
+          "Include": "BossKameck.h"
+        },
+        {
+          "Name": "KameckJetTurtle",
+          "Function": "NameObjFactory::createNameObj<Kameck>",
+          "Include": "Game/Enemy/Kameck.h"
+        }
+      ],
+      "ProductMapObj": [
+        {
+          "Name": "BossKameckBarrier",
+          "Function": "createExtActor<BossKameckBarrier>",
+          "Include": "BossKameckBarrier.h"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/CocoSamboBody.arc",
+    "disc/ObjectData/CocoSamboHead.arc",
+    "include/CocoSambo.h",
+    "source/CocoSambo.cpp"
+  ]
+}

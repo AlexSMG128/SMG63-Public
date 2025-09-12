@@ -1,0 +1,22 @@
+{
+  "Name": "CocoSambo",
+  "Author": "Aurum",
+  "Description": "SMG1 Enemy Port: CocoSambo",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init", "PTUtils"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "CocoSambo",
+          "Function" : "createExtActor<pt::CocoSambo>",
+          "Include" : "CocoSambo.h"
+        }
+      ]
+    }
+  ]
+}

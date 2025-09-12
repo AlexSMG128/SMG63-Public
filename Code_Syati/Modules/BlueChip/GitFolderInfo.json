@@ -1,0 +1,8 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/BlueChip.arc",
+    "include/BlueChip.h",
+    "source/BlueChip.cpp"
+  ]
+}

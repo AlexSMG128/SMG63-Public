@@ -1,0 +1,22 @@
+{
+  "Name": "BallBeamer",
+  "Author": "Aurum",
+  "Description": "SMG1 Enemy Port: Ring Beamer",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init", "PTUtils"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "BallBeamer",
+          "Function" : "createExtActor<pt::BallBeamer>",
+          "Include" : "BallBeamer.h"
+        }
+      ]
+    }
+  ]
+}

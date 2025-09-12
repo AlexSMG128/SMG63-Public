@@ -1,0 +1,88 @@
+{
+  "Name": "Syati Common Functions",
+  "Author": "[Primary Module]",
+  "Description": "Provides access to hook common functions used in the game.",
+
+  "ModuleExtensionDefinition": [
+    {
+      "Name": "OnGameSceneStart",
+      "CodeGenSource": "GEN_FunctionHooks.h",
+      "CodeGenDestination": "codebuild/ModuleData_FunctionHooks.h",
+      "Variables": [
+        "Name",
+        "Function",
+        "Include"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "GameSceneStartFuncList",
+          "ReplaceFormatData": "{1}, //{0}"
+        },
+        {
+          "ReplaceTargetName": "IncludeListOnGameSceneStart",
+          "ReplaceFormatData": "#include \"{2}\""
+        }
+      ]
+    },
+    {
+      "Name": "OnAnySceneDestroy",
+      "CodeGenSource": "GEN_FunctionHooks.h",
+      "CodeGenDestination": "codebuild/ModuleData_FunctionHooks.h",
+      "Variables": [
+        "Name",
+        "Function",
+        "Include"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "AnySceneDestroyedFuncList",
+          "ReplaceFormatData": "{1}, //{0}"
+        },
+        {
+          "ReplaceTargetName": "IncludeListAnySceneDestroyed",
+          "ReplaceFormatData": "#include \"{2}\""
+        }
+      ]
+    },
+    {
+      "Name": "OnGameSystemFrameLoop",
+      "CodeGenSource": "GEN_FunctionHooks.h",
+      "CodeGenDestination": "codebuild/ModuleData_FunctionHooks.h",
+      "Variables": [
+        "Name",
+        "Function",
+        "Include"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "GameSystemFrameLoopList",
+          "ReplaceFormatData": "{1}, //{0}"
+        },
+        {
+          "ReplaceTargetName": "IncludeListGameSystemFrameLoop",
+          "ReplaceFormatData": "#include \"{2}\""
+        }
+      ]
+    },
+    {
+      "Name": "OnGameSceneUpdate",
+      "CodeGenSource": "GEN_FunctionHooks.h",
+      "CodeGenDestination": "codebuild/ModuleData_FunctionHooks.h",
+      "Variables": [
+        "Name",
+        "Function",
+        "Include"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "GameSceneUpdateList",
+          "ReplaceFormatData": "{1}, //{0}"
+        },
+        {
+          "ReplaceTargetName": "IncludeListGameSceneUpdate",
+          "ReplaceFormatData": "#include \"{2}\""
+        }
+      ]
+    }
+  ]
+}

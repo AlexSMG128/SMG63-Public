@@ -1,0 +1,35 @@
+{
+  "Name": "BlueChip",
+  "Author": "Aurum",
+  "Description": "Blue Star Chips",
+  "InstallDependencies": ["Syati_ObjectFactories"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "BlueChip",
+          "Function" : "createExtActor<pt::BlueChip>",
+          "Include" : "BlueChip.h"
+        },
+        {
+          "Name" : "BlueChipGroup",
+          "Function" : "createExtActor<pt::BlueChipGroup>"
+        }
+      ]
+    },
+    {
+      "SceneObjHolder" : [
+        {
+          "Name" : "0x6E",
+          "Function" : "pt::createBlueChipHolder",
+          "Include" : "BlueChip.h"
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,7 @@
     "Name": "TODO",
     "Author": "Super Hackio",
     "Description": "TODO",
+    "ModuleDependancies": ["GalaxyLevelEngine_API"],
     "ModuleData" : [
       {
         "ProductMapObj": [

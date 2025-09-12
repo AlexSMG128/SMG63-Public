@@ -1,0 +1,8 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/Anagon.arc",
+    "include/Anagon.h",
+    "source/Anagon.cpp"
+  ]
+}

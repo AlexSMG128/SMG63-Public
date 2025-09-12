@@ -3,11 +3,10 @@
   "Author": "Evanbowl and Lord-Giganticus",
   "Description": "Full Blue Coin System [63]",
   "CompilerFlags" : [
-    "-DBLUECOINSYSTEM",
-    "-DBLUECOINBOARD" 
+    "-DBLUECOINSYSTEM"
   ],
   "InstallDependancies": ["Syati_ObjectFactories", "Syati_Init", "PTUtils", "CoinBase"],
-  "ModuleDependancies": ["PTUtils", "CoinBase_API"],
+  "ModuleDependancies": ["PTUtils", "CoinBase_API", "Syati_ExtGameData_API"],
   "ModuleData" : [
     {
       "NameObjFactory": [
@@ -15,11 +14,6 @@
           "Name" : "BlueCoin",
           "Function" : "BlueCoinUtil::createBlueCoin",
           "Include" : "BlueCoinUtil.h"
-        },
-        {
-          "Name" : "BlueCoinSign",
-          "Function" : "BlueCoinSignUtil::createBlueCoinSign",
-          "Include" : "BlueCoinBoard.h"
         }
       ],
       "StationedFileEntry" : [
@@ -52,6 +46,14 @@
           "Name": "BlueCoinAllCheck",
           "Function" : "BlueCoinUtil::checkStageBlueCoinCompletion",
           "Include": "BlueCoinUtil.h"
+        }
+      ],
+      "NewSaveChunk": [
+        {
+          "ChunkMemberType": "BlueCoinDataStorage",
+          "ChunkMemberName": "mBlueCoinDataStorage",
+          "ChunkCreationFunc": "createBinaryChunk<BlueCoinDataStorage>",
+          "Include": "BlueCoinDataStorage.h"
         }
       ]
     }

@@ -1,0 +1,23 @@
+{
+  "Name": "Extended Stationed File List",
+  "Author": "Evanbowl",
+  "Description": "Extends the list of files that are always loaded in memory.",
+  "ModuleExtensionDefinition" : [
+    {
+      "Name" : "StationedFileEntry",
+      "CodeGenSource": "GEN_ExtStationedFileTable.h",
+      "CodeGenDestination": "codebuild/ModuleData_ExtStationedFileTable.h",
+      "Variables": [
+        "Type1",
+        "Type2",
+        "Path"
+      ],
+      "CodeGenData": [
+        {
+          "ReplaceTargetName": "NewFileList",
+          "ReplaceFormatData": "    {{{0}, {1}, \"{2}\" }},"
+        }
+      ]
+    }
+  ]
+}

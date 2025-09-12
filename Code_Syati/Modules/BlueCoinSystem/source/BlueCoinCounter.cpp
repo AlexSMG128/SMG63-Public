@@ -198,26 +198,6 @@ kmCall(0x80471784, createCounterLayoutControllerExt); // bl createCounterLayoutC
 kmWrite32(0x80471788, 0x4800000C); // b 0xC
 
 namespace NrvBlueCoinCounter {
-	void NrvHide::execute(Spine* pSpine) const {
-        ((BlueCoinCounter*)pSpine->mExecutor)->exeHide();
-    }
-
-	void NrvAppear::execute(Spine* pSpine) const {
-        ((BlueCoinCounter*)pSpine->mExecutor)->exeAppear();
-    }
-
-	void NrvWait::execute(Spine* pSpine) const {
-        ((BlueCoinCounter*)pSpine->mExecutor)->exeWait();
-    }
-
-	void NrvDisappear::execute(Spine* pSpine) const {
-        ((BlueCoinCounter*)pSpine->mExecutor)->exeDisappear();
-    }
-
-	void NrvShowTextBox::execute(Spine* pSpine) const {
-        ((BlueCoinCounter*)pSpine->mExecutor)->exeShowTextBox();
-    }
-
 	NrvHide(NrvHide::sInstance);
     NrvAppear(NrvAppear::sInstance);
     NrvWait(NrvWait::sInstance);

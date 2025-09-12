@@ -1,0 +1,22 @@
+{
+  "Name": "SMG2 SwingRope Patch",
+  "Author": "Aurum",
+  "Description": "This is the swinging vine from Beach Bowl Galaxy. This actor was left unused in SMG2's code, though. Its constructor is lost, but it can be easily restored. Other than that, all of its functionality is fully intact.",
+  "InstallDependencies": ["Syati_ObjectFactories"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData": [
+    {
+      "NameObjFactory": [
+        {
+          "Name": "SwingRope",
+          "Function": "createExtActor<SwingRope>",
+          "Include": "Game/Ride/SwingRope.h"
+        }
+      ]
+    }
+  ]
+}

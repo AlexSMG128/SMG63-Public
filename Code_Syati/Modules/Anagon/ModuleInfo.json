@@ -1,0 +1,22 @@
+{
+  "Name": "Anagon",
+  "Author": "Aurum",
+  "Description": "SMG1 Enemy Port: Swimming Gringill",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init", "PTUtils"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "Anagon",
+          "Function" : "createExtActor<pt::Anagon>",
+          "Include" : "Anagon.h"
+        }
+      ]
+    }
+  ]
+}

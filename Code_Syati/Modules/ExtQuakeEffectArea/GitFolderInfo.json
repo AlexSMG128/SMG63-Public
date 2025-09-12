@@ -1,0 +1,7 @@
+{
+  "Version": 1,
+  "Files": [
+    "include/ExtQuakeEffectArea.h",
+    "source/ExtQuakeEffectArea.cpp"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "Name": "ExtShellfishItems",
+  "Author": "Aurum",
+  "Description": "PT: Extended Shellfish Items",
+  "InstallDependencies": ["Syati_ObjectFactories"],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "ShellfishBlueChip",
+          "Function" : "NameObjFactory::createNameObj<Shellfish>"
+        },
+        {
+          "Name" : "ShellfishPurpleCoin",
+          "Function" : "NameObjFactory::createNameObj<Shellfish>"
+        }
+      ]
+    }
+  ]
+}

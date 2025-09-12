@@ -336,8 +336,6 @@ void BlueCoinList::populateListEntries() {
             }
         }
     }
-
-    //printListDebugInfo();
 }
 
 void BlueCoinList::updateTextBoxes() {
@@ -472,23 +470,6 @@ void BlueCoinList::setEntryNotBlank(ListEntry* pEntry) {
     pEntry->isBlankSlot = false;
 }
 
-void BlueCoinList::printListDebugInfo() {
-    OSReport("----ENTRIES----\n");
-    for (s32 i = 0; i < 7; i++) {
-        ListEntry* entry = getEntry(i);
-
-        OSReport("Entry %d, %s, [%d - %d], %d, Galaxy State: %d,Blank? %s\n",
-        i,
-        entry->pStageName,
-        entry->rangeMin, entry->rangeMax,
-        entry->coinNum, 
-        entry->state,
-        isEntryBlank(entry) ? "Yes" : "No");
-    }
-
-    OSReport("------------\n");
-}
-
 void BlueCoinList::determineArrowVisibilty() {
     if (mCurrentPage == 1) {
         MR::hidePaneRecursive(this, "Left");
@@ -520,27 +501,6 @@ BlueCoinList::~BlueCoinList() {
 
 namespace NrvBlueCoinList {
     void NrvInit::execute(Spine* pSpine) const {}
-
-    void NrvAppear::execute(Spine* pSpine) const {
-        ((BlueCoinList*)pSpine->mExecutor)->exeAppear();
-    }
-
-    void NrvChange::execute(Spine* pSpine) const {
-        ((BlueCoinList*)pSpine->mExecutor)->exeChange();
-    }
-
-    void NrvChangeFail::execute(Spine* pSpine) const {
-        ((BlueCoinList*)pSpine->mExecutor)->exeChangeFail();
-    }
-
-    void NrvWait::execute(Spine* pSpine) const {
-        ((BlueCoinList*)pSpine->mExecutor)->exeWait();
-    }
-
-    void NrvClose::execute(Spine* pSpine) const {
-        ((BlueCoinList*)pSpine->mExecutor)->exeClose();
-    }
-
 
     NrvInit(NrvInit::sInstance);
     NrvAppear(NrvAppear::sInstance);

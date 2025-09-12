@@ -1,0 +1,26 @@
+{
+  "Name": "JumpSwitchArea",
+  "Author": "Someone, Aurum",
+  "Description": "PT: JumpSwitchArea",
+  "InstallDependencies": ["Syati_ObjectFactories"],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "JumpSwitchArea",
+          "Function" : "createExtActor<pt::JumpSwitchArea>",
+          "Include" : "JumpSwitchArea.h"
+        }
+      ]
+    },
+    {
+      "AreaObjMgr" : [
+        {
+          "Name" : "JumpSwitchArea",
+          "MaxCount" : "64",
+          "Function" : "AreaObjContainer::createManager<AreaObjMgr>"
+        }
+      ]
+    }
+  ]
+}

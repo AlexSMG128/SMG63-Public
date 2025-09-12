@@ -1,0 +1,7 @@
+{
+  "Version": 1,
+  "Files": [
+    "include/BlueChip.h",
+    "source/ExtShellfishItems.cpp"
+  ]
+}

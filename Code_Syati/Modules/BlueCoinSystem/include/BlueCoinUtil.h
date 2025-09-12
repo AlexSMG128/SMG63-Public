@@ -3,6 +3,7 @@
 class BlueCoin;
 class CounterLayoutController;
 class BlueCoinCounter;
+class BlueCoinDataStorage;
 
 class CoinBase;
 
@@ -25,33 +26,12 @@ namespace pt {
     extern void setTextBoxArgStringNumberFontRecursive(LayoutActor* pLayout, const char* paneName, u16 num, s32 index);
 }
 
-struct BlueCoinData {
-    MR::BitArray* mCollectionData;
-    MR::BitArray* mFlags;
-    u16 mSpentData[3];
-    bool mHasSeenTextBox[3];
-};
-
-extern BlueCoinData* gBlueCoinData;
-
 namespace BlueCoinUtil {
-    void loadBlueCoinData();
-    void saveBlueCoinData();
-    void updateToNewFormat();
-
-    int getCollectionByteNum();
-    int getFlagsByteNum();
-
-    void printBlueCoinSaveFileInfo();
-
-    void clearBlueCoinData();
-    void initBlueCoinArray();
-
     s32 getCurrentFileNum();
 
     void setBlueCoinGotCurrentFile(u16 id);
 
-    bool isBlueCoinGot(u8 file, u16 id);
+    //bool isBlueCoinGot(u8 file, u16 id);
     bool isBlueCoinGotCurrentFile(u16 id);
    
     void setOnBlueCoinFlagCurrentFile(u8 flag);
@@ -61,18 +41,19 @@ namespace BlueCoinUtil {
     void setSeenBlueCoinTextBoxCurrentFile();
     bool isBlueCoinTextBoxAppeared();
 
-    void resetAllBlueCoinTargetFile(u8 file);
+    ///void resetAllBlueCoinTargetFile(u8 file);
 
     void setCounter();
     void showTextBox();  
 
     void spendBlueCoinCurrentFile(u16 numcoin);
-    s32 getSpentBlueCoinNum(u8 file);
-    s32 getSpentBlueCoinNumCurrentFile();
+    //s32 getSpentBlueCoinNum(u8 file);
+    u16 getSpentBlueCoinNum(BlueCoinDataStorage* pStorage);
+    u16 getSpentBlueCoinNumCurrentFile();
 
-    s32 getTotalBlueCoinNum(u8 file, bool ignoreSpent);
+    s32 getTotalBlueCoinNum(BlueCoinDataStorage* pStorage, bool ignoreSpent);
     s32 getTotalBlueCoinNumCurrentFile(bool ignoreSpent);
-    
+
     s32 getBlueCoinRange(const char* pStageName, bool minOrMax);
     s32 calcBlueCoinTotalInRange(const char* pStageName, bool collectedCoinsOnly);
 

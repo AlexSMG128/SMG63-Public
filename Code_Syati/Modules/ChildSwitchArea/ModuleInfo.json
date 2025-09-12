@@ -1,0 +1,26 @@
+{
+  "Name": "ChildSwitchArea",
+  "Author": "AwesomeTMC",
+  "Description": "PTD: ChildSwitchArea",
+  "InstallDependencies": ["Syati_ObjectFactories"],
+  "ModuleData" : [
+    {
+      "NameObjFactory": [
+        {
+          "Name" : "ChildSwitchArea",
+          "Function" : "createExtActor<pt::ChildSwitchArea>",
+          "Include" : "ChildSwitchArea.h"
+        }
+      ]
+    },
+    {
+      "AreaObjMgr" : [
+        {
+          "Name" : "ChildSwitchArea",
+          "MaxCount" : "32",
+          "Function" : "AreaObjContainer::createManager<AreaObjMgr>"
+        }
+      ]
+    }
+  ]
+}

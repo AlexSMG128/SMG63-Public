@@ -14,6 +14,7 @@ public:
     virtual ~BlueCoinStageProgress();
     virtual void init(const JMapInfoIter& rIter); 
     virtual void appear();
+    virtual void kill();
     virtual void control();
     void exeAppear();
     void exeWait();
@@ -35,9 +36,9 @@ public:
 };
 
 namespace NrvBlueCoinStageProgress {
-    NERVE(NrvAppear);
-    NERVE(NrvWait);
-    NERVE(NrvUpdate);
-    NERVE(NrvDisappear);
+    NERVE_DECL_EXE(NrvAppear, BlueCoinStageProgress, Appear);
+    NERVE_DECL_EXE(NrvWait, BlueCoinStageProgress, Wait);
+    NERVE_DECL_EXE(NrvUpdate, BlueCoinStageProgress, Update);
+    NERVE_DECL_EXE(NrvDisappear, BlueCoinStageProgress, Disappear);
     NERVE(NrvHide);
 };

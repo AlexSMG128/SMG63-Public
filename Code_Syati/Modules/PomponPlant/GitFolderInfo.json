@@ -1,0 +1,8 @@
+{
+  "Version": 1,
+  "Files": [
+    "disc/ObjectData/Pompon2Plant.arc",
+    "include/PomponPlant.h",
+    "source/PomponPlant.cpp"
+  ]
+}

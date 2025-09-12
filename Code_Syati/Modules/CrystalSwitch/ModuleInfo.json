@@ -1,0 +1,22 @@
+{
+  "Name": "Crystal Switch",
+  "Author": "Original PT Developers",
+  "Description": "SMG1 Actor Port: CrystalSwitch",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "CrystalSwitch",
+          "Function" : "createExtActor<pt::CrystalSwitch>",
+          "Include" : "CrystalSwitch.h"
+        }
+      ]
+    }
+  ]
+}

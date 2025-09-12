@@ -1,0 +1,7 @@
+{
+  "Version": 1,
+  "Files": [
+    "include/Game/MapObj/CollapsePlaneExt.h",
+    "source/ExtCollapsePlane.cpp"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+    "Name": "WaterLeakPipe",
+    "Author": "Aurum",
+    "Description": "PTD: The leaking water pipe from Freezeflame Galaxy and Deep Dark Galaxy.",
+    "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init"],
+    "BuildTasks": [{
+      "Task": "Copy",
+      "From": "disc/",
+      "To": "../../Output/disc/"
+    }],
+    "ModuleData" : [
+      {
+        "NameObjFactory" : [
+          {
+            "Name" : "WaterLeakPipe",
+            "Function" : "createExtActor<pt::WaterLeakPipe>",
+            "Include" : "WaterLeakPipe.h"
+          }
+        ]
+      }
+    ]
+  }

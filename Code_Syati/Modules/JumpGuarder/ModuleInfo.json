@@ -1,0 +1,22 @@
+{
+  "Name": "JumpGuarder",
+  "Author": "Aurum",
+  "Description": "SMG1 Enemy Port: JumpGuarder",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init", "PTUtils"],
+  "BuildTasks": [{
+    "Task": "Copy",
+    "From": "disc/",
+    "To": "../../Output/disc/"
+  }],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "JumpGuarder",
+          "Function" : "createExtActor<pt::JumpGuarder>",
+          "Include" : "JumpGuarder.h"
+        }
+      ]
+    }
+  ]
+}
