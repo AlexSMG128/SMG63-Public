@@ -9,19 +9,69 @@
 *  https://www.github.com/SuperHackio/GalaxyLevelEngine/issues
 *
 *  Generation Information:
-    "Generated: August 2, 2025 11:59:49 AM",
+    "Generated: Saturday, January 31, 2026 1:19:05 PM",
     "Symbol Count: 11",
-    "Hook Count: 1",
+    "Hook Count: 6",
     "GLE Version: V3.5.0.0"
 */
 
-{{IncludeListGLE__IsGalaxyAllComplete}}
+{{IncludeListGLE__onScenarioSelectInit}}
 
-typedef bool (*HookFuncGLE__IsGalaxyAllCompleteDef)(const char *);
+typedef void (*HookFuncGLE__onScenarioSelectInitDef)(LayoutActor *);
 
-const HookFuncGLE__IsGalaxyAllCompleteDef cModuleGLE__IsGalaxyAllCompleteTable[] = {
+const HookFuncGLE__onScenarioSelectInitDef cModuleGLE__onScenarioSelectInitTable[] = {
     NULL,
-{{GLE__IsGalaxyAllCompleteList}}
+{{GLE__onScenarioSelectInitList}}
 };
-const s32 cModuleGLE__IsGalaxyAllCompleteTableCount = sizeof(cModuleGLE__IsGalaxyAllCompleteTable) / sizeof(HookFuncGLE__IsGalaxyAllCompleteDef);
+const s32 cModuleGLE__onScenarioSelectInitTableCount = sizeof(cModuleGLE__onScenarioSelectInitTable) / sizeof(HookFuncGLE__onScenarioSelectInitDef);
+
+{{IncludeListGLE__onScenarioSelectAppear}}
+
+typedef void (*HookFuncGLE__onScenarioSelectAppearDef)(LayoutActor *);
+
+const HookFuncGLE__onScenarioSelectAppearDef cModuleGLE__onScenarioSelectAppearTable[] = {
+    NULL,
+{{GLE__onScenarioSelectAppearList}}
+};
+const s32 cModuleGLE__onScenarioSelectAppearTableCount = sizeof(cModuleGLE__onScenarioSelectAppearTable) / sizeof(HookFuncGLE__onScenarioSelectAppearDef);
+
+{{IncludeListGLE__exeAfterScenarioSelected}}
+
+typedef void (*HookFuncGLE__exeAfterScenarioSelectedDef)(LayoutActor *);
+
+const HookFuncGLE__exeAfterScenarioSelectedDef cModuleGLE__exeAfterScenarioSelectedTable[] = {
+    NULL,
+{{GLE__exeAfterScenarioSelectedList}}
+};
+const s32 cModuleGLE__exeAfterScenarioSelectedTableCount = sizeof(cModuleGLE__exeAfterScenarioSelectedTable) / sizeof(HookFuncGLE__exeAfterScenarioSelectedDef);
+
+{{IncludeListGLE__onHideGalaxyInfoBanner}}
+
+typedef void (*HookFuncGLE__onHideGalaxyInfoBannerDef)(SimpleLayout *, const char *);
+
+const HookFuncGLE__onHideGalaxyInfoBannerDef cModuleGLE__onHideGalaxyInfoBannerTable[] = {
+    NULL,
+{{GLE__onHideGalaxyInfoBannerList}}
+};
+const s32 cModuleGLE__onHideGalaxyInfoBannerTableCount = sizeof(cModuleGLE__onHideGalaxyInfoBannerTable) / sizeof(HookFuncGLE__onHideGalaxyInfoBannerDef);
+
+{{IncludeListGLE__onShowGalaxyInfoBanner}}
+
+typedef void (*HookFuncGLE__onShowGalaxyInfoBannerDef)(SimpleLayout *, const char *);
+
+const HookFuncGLE__onShowGalaxyInfoBannerDef cModuleGLE__onShowGalaxyInfoBannerTable[] = {
+    NULL,
+{{GLE__onShowGalaxyInfoBannerList}}
+};
+const s32 cModuleGLE__onShowGalaxyInfoBannerTableCount = sizeof(cModuleGLE__onShowGalaxyInfoBannerTable) / sizeof(HookFuncGLE__onShowGalaxyInfoBannerDef);
+
+{{IncludeListGLE__isGalaxyCompleteRequirementComplete}}
+
+typedef bool (*HookFuncGLE__isGalaxyCompleteRequirementCompleteDef)(const char *);
+
+const HookFuncGLE__isGalaxyCompleteRequirementCompleteDef cModuleGLE__isGalaxyCompleteRequirementCompleteTable[] = {
+    NULL,
+{{GLE__isGalaxyCompleteRequirementCompleteList}}
+};
+const s32 cModuleGLE__isGalaxyCompleteRequirementCompleteTableCount = sizeof(cModuleGLE__isGalaxyCompleteRequirementCompleteTable) / sizeof(HookFuncGLE__isGalaxyCompleteRequirementCompleteDef);
 

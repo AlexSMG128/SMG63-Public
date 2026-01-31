@@ -206,6 +206,11 @@ namespace NrvBlueCoinCounter {
 }
 
 void createBlueCoinCounter(CounterLayoutControllerExt* pController, const Nerve* pNerve) { 
+    pController->initNerve(pNerve);
+
+    if (MR::isStageFileSelect() || MR::isStageStaffRoll())
+        return;
+
     BlueCoinCounter* pCounter = new BlueCoinCounter("BlueCoinCounter");
     pCounter->initWithoutIter();
 
@@ -216,7 +221,6 @@ void createBlueCoinCounter(CounterLayoutControllerExt* pController, const Nerve*
 
     pController->mBlueCoinStageProgress = pStageProgress;
 
-    pController->initNerve(pNerve);
 }
 
 kmCall(0x804657AC, createBlueCoinCounter);
@@ -278,12 +282,12 @@ void disappearBlueCoinLayout(CounterLayoutControllerExt* pController) {
 kmCall(0x80466198, disappearBlueCoinLayout);
 
 void killBlueCoinCounter(CounterLayoutControllerExt* pController) {
-    if (pController->mBlueCoinCounter && !MR::isDemoActive("BlueCoinFirstTimeText")) {
-        pController->mBlueCoinCounter->kill();
-    }
+    if (!MR::isDemoActive("BlueCoinFirstTimeText")) {
+        if (pController->mBlueCoinCounter)
+            pController->mBlueCoinCounter->kill();
 
-    if (pController->mBlueCoinStageProgress && !MR::isDemoActive("BlueCoinFirstTimeText")) {
-        pController->mBlueCoinStageProgress->kill();
+        if (pController->mBlueCoinStageProgress)
+            pController->mBlueCoinStageProgress->kill();
     }
 
     pController->killAllCoounter();

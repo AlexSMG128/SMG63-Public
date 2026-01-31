@@ -3,11 +3,6 @@
 #include "syati.h"
 #include "BlueCoinUtil.h"
 
-class MultiEmitter {
-    public:
-    void setOffset(const TVec3f& rVec);
-};
-
 class BlueCoinStageProgress : public LayoutActor {
 public:
     BlueCoinStageProgress(const char* pName);
@@ -27,11 +22,13 @@ public:
     void updateNumBox();
     void setTargetIDAndAppear(s32 id);
     void calcSlidePaneFrame();
+    void moveCounterForScoreAttack();
 
-    s32 mTargetID;
-    f32 mSlideFrame;
+    TVec2f mFollowPos;
     CounterLayoutAppearer* mAppearer;
     CountUpPaneRumbler* mPaneRumbler;
+    s32 mTargetID;
+    f32 mSlideFrame;
     bool mIsTargetIDGot;
 };
 

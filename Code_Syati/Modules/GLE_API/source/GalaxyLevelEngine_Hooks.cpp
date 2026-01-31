@@ -12,25 +12,111 @@
 *  https://www.github.com/SuperHackio/GalaxyLevelEngine/issues
 *
 *  Generation Information:
-    "Generated: August 2, 2025 11:59:49 AM",
+    "Generated: Saturday, January 31, 2026 1:19:05 PM",
     "Symbol Count: 11",
-    "Hook Count: 1",
+    "Hook Count: 6",
     "GLE Version: V3.5.0.0"
 */
 
-extern const u8 __hk__GLE__IsGalaxyAllComplete;
+extern const u8 __hk__GLE__onScenarioSelectInit_0;
+
 
 namespace GLE_HOOK_NAMESPACE {
-    bool GLE__IsGalaxyAllComplete(const char * pStageName) {
+    void GLE__onScenarioSelectInit(LayoutActor * pScenarioSelectLayout) {
         
-        for (s32 i = 1; i < cModuleGLE__IsGalaxyAllCompleteTableCount; i++)
+        for (s32 i = 1; i < cModuleGLE__onScenarioSelectInitTableCount; i++)
         {
-            if (!cModuleGLE__IsGalaxyAllCompleteTable[i](pStageName))
+            cModuleGLE__onScenarioSelectInitTable[i](pScenarioSelectLayout);
+        }
+        
+    }
+        kmCall(&__hk__GLE__onScenarioSelectInit_0, GLE__onScenarioSelectInit);
+}
+
+// ----------------------------------------------------------------------------------------------------------------
+
+extern const u8 __hk__GLE__onScenarioSelectAppear_0;
+
+
+namespace GLE_HOOK_NAMESPACE {
+    void GLE__onScenarioSelectAppear(LayoutActor * pScenarioSelectLayout) {
+        
+        for (s32 i = 1; i < cModuleGLE__onScenarioSelectAppearTableCount; i++)
+        {
+            cModuleGLE__onScenarioSelectAppearTable[i](pScenarioSelectLayout);
+        }
+        
+    }
+        kmCall(&__hk__GLE__onScenarioSelectAppear_0, GLE__onScenarioSelectAppear);
+}
+
+// ----------------------------------------------------------------------------------------------------------------
+
+extern const u8 __hk__GLE__exeAfterScenarioSelected_0;
+
+
+namespace GLE_HOOK_NAMESPACE {
+    void GLE__exeAfterScenarioSelected(LayoutActor * pScenarioSelectLayout) {
+        
+        for (s32 i = 1; i < cModuleGLE__exeAfterScenarioSelectedTableCount; i++)
+        {
+            cModuleGLE__exeAfterScenarioSelectedTable[i](pScenarioSelectLayout);
+        }
+        
+    }
+        kmCall(&__hk__GLE__exeAfterScenarioSelected_0, GLE__exeAfterScenarioSelected);
+}
+
+// ----------------------------------------------------------------------------------------------------------------
+
+extern const u8 __hk__GLE__onHideGalaxyInfoBanner_0;
+
+
+namespace GLE_HOOK_NAMESPACE {
+    void GLE__onHideGalaxyInfoBanner(SimpleLayout * pGalaxySelectInfo, const char * pGalaxyName) {
+        
+        for (s32 i = 1; i < cModuleGLE__onHideGalaxyInfoBannerTableCount; i++)
+        {
+            cModuleGLE__onHideGalaxyInfoBannerTable[i](pGalaxySelectInfo, pGalaxyName);
+        }
+        
+    }
+        kmCall(&__hk__GLE__onHideGalaxyInfoBanner_0, GLE__onHideGalaxyInfoBanner);
+}
+
+// ----------------------------------------------------------------------------------------------------------------
+
+extern const u8 __hk__GLE__onShowGalaxyInfoBanner_0;
+
+
+namespace GLE_HOOK_NAMESPACE {
+    void GLE__onShowGalaxyInfoBanner(SimpleLayout * pGalaxySelectInfo, const char * pGalaxyName) {
+        
+        for (s32 i = 1; i < cModuleGLE__onShowGalaxyInfoBannerTableCount; i++)
+        {
+            cModuleGLE__onShowGalaxyInfoBannerTable[i](pGalaxySelectInfo, pGalaxyName);
+        }
+        
+    }
+        kmCall(&__hk__GLE__onShowGalaxyInfoBanner_0, GLE__onShowGalaxyInfoBanner);
+}
+
+// ----------------------------------------------------------------------------------------------------------------
+
+extern const u8 __hk__GLE__isGalaxyCompleteRequirementComplete_0;
+
+
+namespace GLE_HOOK_NAMESPACE {
+    bool GLE__isGalaxyCompleteRequirementComplete(const char * pStageName) {
+        
+        for (s32 i = 1; i < cModuleGLE__isGalaxyCompleteRequirementCompleteTableCount; i++)
+        {
+            if (!cModuleGLE__isGalaxyCompleteRequirementCompleteTable[i](pStageName))
     return false;
         }
         return true;
     }
-    kmCall(&__hk__GLE__IsGalaxyAllComplete, GLE__IsGalaxyAllComplete);
+        kmCall(&__hk__GLE__isGalaxyCompleteRequirementComplete_0, GLE__isGalaxyCompleteRequirementComplete);
 }
 
 // ----------------------------------------------------------------------------------------------------------------

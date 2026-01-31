@@ -1,7 +1,9 @@
 #include "BlueCoinStageProgress.h"
 #include "GeneralUtil.h"
+#include "Game/Screen/BombTimerLayout.h"
 
 BlueCoinStageProgress::BlueCoinStageProgress(const char* pName) : LayoutActor(pName, false) {
+    mFollowPos = TVec2f(0.0f, 0.0f);
     mTargetID = -1;
     mSlideFrame = 0.0f;
     mAppearer = 0;
@@ -11,26 +13,33 @@ BlueCoinStageProgress::BlueCoinStageProgress(const char* pName) : LayoutActor(pN
 
 void BlueCoinStageProgress::init(const JMapInfoIter& rIter) {
     initLayoutManager("BlueCoinStageProgress", 2);
-    initNerve(&NrvBlueCoinStageProgress::NrvHide::sInstance);
     initEffectKeeper(0, 0, 0);
+    initNerve(&NrvBlueCoinStageProgress::NrvHide::sInstance);
     MR::connectToSceneLayout(this);
     MR::registerDemoSimpleCastAll(this);
     MR::createAndAddPaneCtrl(this, "Text00", 1);
+    MR::createAndAddPaneCtrl(this, "StageProgress", 1);
     MR::createAndAddPaneCtrl(this, "Rumble", 1);
     MR::createAndAddPaneCtrl(this, "Particle", 1);
+    MR::createAndAddPaneCtrl(this, "CounterPos", 1);
     MR::setTextBoxFormatRecursive(this, "ShaText", L"TEST");
     MR::setTextBoxFormatRecursive(this, "TextAnm", L"");
     MR::setTextBoxFormatRecursive(this, "ShaNum", L"");
     MR::registerDemoSimpleCastAll(this);
     updateTextBox();
-
+    
     mAppearer = new CounterLayoutAppearer(this, TVec2f(0.0f, 50.0f));
 
+    MR::setFollowTypeReplace(this, "StageProgress");
+    MR::setFollowPos(&mFollowPos, this, "StageProgress");
+    
     mPaneRumbler = new CountUpPaneRumbler(this, "Rumble");
     mPaneRumbler->mRumbleCalculator->mRumbleStrength = 8.0f;
 }
 
+
 void BlueCoinStageProgress::appear() {
+    moveCounterForScoreAttack();
     LayoutActor::appear();
     if (mAppearer->isAppeared())
         setNerve(&NrvBlueCoinStageProgress::NrvUpdate::sInstance);
@@ -49,6 +58,7 @@ void BlueCoinStageProgress::kill() {
 }
 
 void BlueCoinStageProgress::control() {
+    MR::copyPaneTrans(&mFollowPos, this, "Pos");
     mAppearer->updateNerve();
     mPaneRumbler->update();
 }
@@ -103,6 +113,7 @@ void BlueCoinStageProgress::exeDisappear() {
         setNerve(&NrvBlueCoinStageProgress::NrvHide::sInstance);
     }
 }
+
 
 void BlueCoinStageProgress::disappear() {
     setNerve(&NrvBlueCoinStageProgress::NrvDisappear::sInstance);
@@ -183,17 +194,35 @@ void BlueCoinStageProgress::setTargetIDAndAppear(s32 id) {
 void BlueCoinStageProgress::calcSlidePaneFrame() {
     s32 totalInRange = BlueCoinUtil::calcBlueCoinTotalInRange(0, false);
     s32 coinMin = BlueCoinUtil::getBlueCoinRange(0, false);
-    mSlideFrame = 200.0f + 32.0f*(mTargetID-coinMin) - 32.0f*(f32)((totalInRange/2)-1) - 18.0f*(!(totalInRange%2));
+    f32 offset = 32.0f*((mTargetID-coinMin)-((f32)((totalInRange/2))));
+    f32 oddcoin = 16.0f*(!(totalInRange%2));
+    mSlideFrame = 198.0f + offset + oddcoin;
+}
+
+void BlueCoinStageProgress::moveCounterForScoreAttack() {
+    if (!MR::isStageScoreAttack())
+        return;
+
+    f32 frame = 0;
+    bool isDead = 1;
+    u32 pScoreAttackCounter = *(u32*)((u8*)MR::getSceneObjHolder()->getObj(0x35)+0x14);
+    u32 pScoreCounterLayout = *(u32*)((u8*)pScoreAttackCounter+0x90);
+
+    if (pScoreCounterLayout)
+        isDead = MR::isDead((LayoutActor*)pScoreCounterLayout);
+
+    if (!isDead)
+        frame = 1.0f;
+
+    MR::startPaneAnimAndSetFrameAndStop(this, "CounterPos", "Pos", frame, 0);
 }
 
 BlueCoinStageProgress::~BlueCoinStageProgress() {
 
 }
 
-namespace NrvBlueCoinStageProgress {
-    void NrvHide::execute(Spine* pSpine) const {
-
-    }
+namespace NrvBlueCoinStageProgress {\
+    void NrvHide::execute(Spine* pSpine) const {}
 
     NrvAppear(NrvAppear::sInstance);
     NrvWait(NrvWait::sInstance);

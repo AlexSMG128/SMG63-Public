@@ -45,7 +45,9 @@ void BlueCoinList::init(const JMapInfoIter& rIter) {
 
     initNerve(&NrvBlueCoinList::NrvInit::sInstance);
     
-    mRangeTable = BlueCoinUtil::getBlueCoinIDRangeTable();
+    mRangeTable = new JMapInfo();
+    void* pData = MR::mountAsyncArchive("/SystemData/BlueCoinIDRangeTable.arc")->getResource("BlueCoinIDRangeTable.bcsv");
+    mRangeTable->attach(pData);
 
     mArrowRight = new ButtonPaneController(this, "Right", "BoxArrowR", 0, 1);
     mArrowRight->mFadeAfterSelect = false;

@@ -1,0 +1,17 @@
+{
+  "Name": "Donut Blocks",
+  "Author": "VTXG, Humming Owl",
+  "Description": "Brings the Donut Blocks from Super Mario 3D Land/World into SMG2.\nRead the README for instructions on how to set up this module properly.",
+  "InstallDependencies": ["Syati_ObjectFactories", "Syati_Init", "PTUtils"],
+  "ModuleData" : [
+    {
+      "NameObjFactory" : [
+        {
+          "Name" : "DonutBlock",
+          "Function" : "createExtActor<DonutBlock>",
+          "Include" : "DonutBlock.h"
+        }
+      ]
+    }
+  ]
+}

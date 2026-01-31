@@ -300,3 +300,78 @@ void setGalaxyInfoBlueCoinCount(LayoutActor* actor, const char* pGalaxyName, con
 kmWrite32(0x804A95E4, 0x809B003C); // lwz r4, 0x3C(r27)
 kmCall(0x804A95E8, setGalaxyInfoBlueCoinCount); // bl setGalaxyInfoBlueCoinCount
 #endif
+
+void onGLEScenarioSelectInit(LayoutActor* pLayout) {
+    wchar_t strBuf[16];
+    
+    s32 coinMin = BlueCoinUtil::getBlueCoinRange(0, false);
+    MR::startPaneAnim(pLayout, "ScenarioFrame", "GalaxyMove", 1);
+    if (coinMin == -1) {
+        MR::setPaneAnimFrameAndStop(pLayout, "ScenarioFrame", 0.0f, 1);
+        MR::setTextBoxFormatRecursive(pLayout, "ShaBlueCoin", L"");
+        return;
+    }
+    MR::setPaneAnimFrameAndStop(pLayout, "ScenarioFrame", 1.0f, 1);
+
+    s32 coinMax = BlueCoinUtil::getBlueCoinRange(0, true);
+    s32 coinNum = (coinMax+1)-coinMin;
+    int icon;
+
+    for (s32 i = 0; i < coinNum; i++) {
+        if (BlueCoinUtil::isBlueCoinGotCurrentFile(coinMin+i))
+            icon = 0x8A;
+        else
+            icon = 0xC0;
+
+        MR::addPictureFontCode(&strBuf[i], icon);
+        OSReport("%x ", icon);
+    }
+    OSReport("\n");
+    
+    strBuf[coinNum] = L'\0';
+    MR::setTextBoxFormatRecursive(pLayout, "ShaBlueCoin", strBuf);
+}
+
+void onGLEScenarioSelectSelect(LayoutActor* pLayout) {
+
+    if (!MR::isStep(pLayout, 60))
+        return;
+
+    s32 coinMin = BlueCoinUtil::getBlueCoinRange(0, false);
+    
+    if (coinMin != -1) 
+        MR::startPaneAnim(pLayout, "ScenarioFrame", "GalaxyReturn", 1);
+}
+
+void onGLEGalaxyInfoInit(SimpleLayout* pLayout, const Nerve* pNerve) {
+    pLayout->initNerve(pNerve);
+    MR::hidePaneRecursive(pLayout, "BlueCoinCurrent");
+}
+
+kmCall(0x804A97A8, onGLEGalaxyInfoInit);
+
+void onGLEGalaxyInfoAppear(SimpleLayout* pLayout, const char* pStr) {
+    s32 coinMin = BlueCoinUtil::getBlueCoinRange(pStr, false);
+
+    if (coinMin == -1)
+        return;
+
+    MR::showPaneRecursive(pLayout, "BlueCoinCurrent");
+    s32 coinMax = BlueCoinUtil::getBlueCoinRange(pStr, true);
+    s32 coinsCollected = BlueCoinUtil::calcBlueCoinTotalInRange(pStr, true);
+    s32 coinTotal = coinMax-(coinMin-1);
+    MR::setTextBoxFormatRecursive(pLayout, "ShaBlueCoinStage", L"%ls%d", counterPictureFonts2, coinsCollected);
+    wchar_t str[5];
+    pt::str2wcsfullwidth(str, coinTotal);
+    MR::setTextBoxFormatRecursive(pLayout, "ShaBlueCoinNum", str);
+}
+
+bool onGLEGalaxyInfoHide(LayoutActor* pLayout, u32 l) {
+    if (!MR::isAnimStopped(pLayout, l))
+        return false;
+    
+    MR::hidePaneRecursive(pLayout, "BlueCoinCurrent");
+    return true;
+}
+
+kmCall(0x804A9A4C, onGLEGalaxyInfoHide);

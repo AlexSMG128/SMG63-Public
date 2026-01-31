@@ -32,3 +32,7 @@ extern "C" {
     // unkPauseMenuReturnToSelect__FP9PauseMenu
     void __kAutoMap_80487540(PauseMenu*); // sub_80487540
 }
+
+void onGLEScenarioSelectInit(LayoutActor* pLayout);
+void onGLEScenarioSelectSelect(LayoutActor* pLayout);
+void onGLEGalaxyInfoAppear(SimpleLayout* pLayout, const char* pStr);

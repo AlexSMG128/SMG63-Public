@@ -7,7 +7,6 @@
     "CocoSambo",
     "CollapsePlaneExt",
     "CollectSwitchCtrl",
-    "CrystalBox",
     "CrystalSwitch",
     "DharmaSambo",
     "DummyDisplayModelTable",
@@ -34,7 +33,6 @@
     "PTUtils",
     "ScrewSwitchBase",
     "SMG2_OnimasuPivot",
-    "SMG2_OpenGhost",
     "SMG63",
     "SMG63Area",
     "SMG63_PaintingEntranceObj",
@@ -62,7 +60,9 @@
     "Syati_CommonFunctionHooks",
     "SMG2_YoshiEatExtensions",
     "SMG2_BossKameckReturns",
-    "SMG2-FPSCounterLayout"
+    "SMG2-FPSCounterLayout",
+    "DonutBlocks",
+    "SMG2_CometScreenFilter"
   ],
   "ModulesPath": "Modules\\",
   "OutputPath": "..\\SMG63FULL\\CustomCode\\",

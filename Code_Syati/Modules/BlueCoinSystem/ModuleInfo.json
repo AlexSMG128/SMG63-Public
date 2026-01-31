@@ -31,6 +31,16 @@
           "Type1" : "1",
           "Type2" : "7",
           "Path" : "/LayoutData/BlueCoinCounterInStage.arc"
+        },
+        {
+          "Type1" : "1",
+          "Type2" : "7",
+          "Path" : "/LayoutData/BlueCoinStageProgress.arc"
+        },
+        {
+          "Type1" : "1",
+          "Type2" : "1",
+          "Path" : "/SystemData/BlueCoinIDRangeTable.arc"
         }
       ],
       "CoinBaseSpawning": [
@@ -46,6 +56,27 @@
           "Name": "BlueCoinAllCheck",
           "Function" : "BlueCoinUtil::checkStageBlueCoinCompletion",
           "Include": "BlueCoinUtil.h"
+        }
+      ],
+      "GLE__onScenarioSelectAppear": [
+        {
+          "Name": "BCSScenarioSelectAppear",
+          "Function" : "onGLEScenarioSelectInit",
+          "Include" : "BlueCoinLayouts.h"
+        }
+      ],
+      "GLE__exeAfterScenarioSelected": [
+        {
+          "Name": "BCSScenarioSelectAppear",
+          "Function" : "onGLEScenarioSelectSelect",
+          "Include" : "BlueCoinLayouts.h"
+        }
+      ],
+      "GLE__onShowGalaxyInfoBanner": [
+        {
+          "Name": "BCSGalaxyBannerAppear",
+          "Function" : "onGLEGalaxyInfoAppear",
+          "Include" : "BlueCoinLayouts.h"
         }
       ],
       "NewSaveChunk": [

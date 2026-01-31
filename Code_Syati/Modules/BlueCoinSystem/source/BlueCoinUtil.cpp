@@ -10,9 +10,6 @@
 #include "Game/LiveActor/ExtActorActionKeeper.h"
 #include "BlueCoinStageProgress.h"
 
-
-void* gBlueCoinIDRangeTable = pt::loadArcAndFile("/SystemData/BlueCoinIDRangeTable.arc", "/BlueCoinIDRangeTable.bcsv", 0);
-    
 namespace BlueCoinUtil {
     s32 getCurrentFileNum() {
         return GameDataFunction::getSaveDataHandleSequence()->mCurrentFileNum-1;
@@ -102,8 +99,9 @@ namespace BlueCoinUtil {
     }
 
     s32 getBlueCoinRange(const char* pStageName, bool minOrMax) {
-        JMapInfo table = JMapInfo();
-        table.attach(gBlueCoinIDRangeTable);
+        JMapInfo table;
+        void* pData = MR::mountAsyncArchive("/SystemData/BlueCoinIDRangeTable.arc")->getResource("BlueCoinIDRangeTable.bcsv");
+        table.attach(pData);
 
         const char* tableStageName;
         s32 targetLine = -1;
@@ -129,8 +127,9 @@ namespace BlueCoinUtil {
     }
 
     s32 calcBlueCoinTotalInRange(const char* pStageName, bool collectedCoinsOnly) {
-        JMapInfo table = JMapInfo();
-        table.attach(gBlueCoinIDRangeTable);
+        JMapInfo table;
+        void* pData = MR::mountAsyncArchive("/SystemData/BlueCoinIDRangeTable.arc")->getResource("BlueCoinIDRangeTable.bcsv");
+        table.attach(pData);
 
         const char* tableStageName;
         s32 targetLine = -1;
@@ -168,12 +167,6 @@ namespace BlueCoinUtil {
         }
         
         return -1;
-    }
-
-    JMapInfo* getBlueCoinIDRangeTable() {
-        JMapInfo* table = new JMapInfo();
-        table->attach(gBlueCoinIDRangeTable);
-        return table;
     }
 
     CoinBase* tryCreateBlueCoinForSpawningActorActionKeeper(LiveActor* pSourceActor, const JMapInfoIter& rIter, s32 id) {
@@ -232,13 +225,4 @@ namespace BlueCoinUtil {
             pStageProgress->setTargetIDAndAppear(id);
         }
     }
-
-    //void resetAllBlueCoinOnDeleteFile(SaveDataHandleSequence* pSeq, UserFile* pFile, int fileID) {
-    //pSeq->restoreUserFileConfigData(pFile, fileID);
-    //
-    //BlueCoinDataUtil::getBlueCoinDataStorage()->initializeData();
-    //}
-    //kmCall(0x804D9BF8, resetAllBlueCoinOnDeleteFile); // bl resetAllBlueCoinOnDeleteFile
 }
-
-

@@ -57,8 +57,6 @@ namespace BlueCoinUtil {
     s32 getBlueCoinRange(const char* pStageName, bool minOrMax);
     s32 calcBlueCoinTotalInRange(const char* pStageName, bool collectedCoinsOnly);
 
-    JMapInfo* getBlueCoinIDRangeTable();
-
     CoinBase* tryCreateBlueCoinForSpawningActorActionKeeper(LiveActor* pSourceActor, const JMapInfoIter& rIter, s32 id);
     bool tryAppearBlueCoinActionKeeper(LiveActor* pSourceActor, const TVec3f& rPosition);
     bool isValidBlueCoinActionKeeper(LiveActor* pSourceActor);
@@ -68,3 +66,4 @@ namespace BlueCoinUtil {
     bool checkStageBlueCoinCompletion(const char* pStageName);
     void updateStageProgress(s32 id);
 };
+
